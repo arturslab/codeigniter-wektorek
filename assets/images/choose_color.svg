@@ -1,0 +1,29 @@
+<svg id="svg8" width="103" height="80" version="1.1" viewBox="0 0 27.252 21.167" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs id="defs2">
+  <linearGradient id="linearGradient86870" x1="-582.9" x2="-577.63" y1="241.06" y2="241.06" gradientTransform="matrix(1.8891 0 0 1.8891 379.76 -271.46)" gradientUnits="userSpaceOnUse">
+   <stop id="stop1640" style="stop-color:#f54337" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g id="layer1" transform="translate(-17.368 -94.405)">
+  <rect id="background" x="17.368" y="94.405" width="27.252" height="21.167" style="fill:#333;paint-order:fill markers stroke"/>
+  <g id="g86917" transform="translate(740.23 -75.37)">
+   <g id="g86900">
+    <circle id="circle86888" cx="-716.64" cy="184.46" r="4.9264" style="fill:#333;paint-order:fill markers stroke"/>
+    <circle id="circle86868" cx="-716.44" cy="183.93" r="4.9264" style="fill:url(#linearGradient86870);paint-order:fill markers stroke"/>
+   </g>
+   <g id="g86904" transform="translate(-1.5875)">
+    <circle id="circle86890" cx="-706.54" cy="184.46" r="4.9264" style="fill:#333;paint-order:fill markers stroke"/>
+    <circle id="circle86872" cx="-706.34" cy="183.93" r="4.9264" style="fill:#fc0;paint-order:fill markers stroke"/>
+   </g>
+   <g id="g86896" transform="translate(-1.0583 1.0583)">
+    <circle id="circle86892" cx="-711.59" cy="175.73" r="4.9264" style="fill:#333;paint-order:fill markers stroke"/>
+    <circle id="circle86876" cx="-711.39" cy="175.2" r="4.9264" style="fill:#59f;paint-order:fill markers stroke"/>
+   </g>
+  </g>
+  <g id="g84393" transform="matrix(.28 0 0 .28 235.16 49.928)">
+   <rect id="rect84387" x="-698.37" y="163.57" width="13.229" height="13.229" style="fill:#1a1a1a;paint-order:fill markers stroke"/>
+   <rect id="rect84389" x="-698.37" y="190.03" width="13.229" height="13.229" style="fill:#1a1a1a;paint-order:fill markers stroke"/>
+   <rect id="rect84391" x="-698.37" y="216.49" width="13.229" height="13.229" style="fill:#1a1a1a;paint-order:fill markers stroke"/>
+  </g>
+ </g>
+</svg>

@@ -1,6 +1,29 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$config['website_name'] = 'Gry.melma.pl';
+
+// Load environment variables
+require ('env.php');
+
+$config['auth_salt'] = $cf['auth']['salt'];
+$config['session_salt'] = $cf['auth']['session_salt'];
+
+// Mailer SMTP configuration
+$config['smtp_host'] = $cf['smtp']['smtp_host'];
+$config['smtp_port'] = $cf['smtp']['smtp_port'];
+$config['smtp_username'] = $cf['smtp']['smtp_username'];
+$config['smtp_pass'] = $cf['smtp']['smtp_pass'];
+// E-mail view configuration
+$config['email_charset'] = 'utf-8';
+$config['email_mailtype'] = 'html';
+$config['email_wordwrap'] = TRUE;
+$config['email_from'] = $cf['smtp']['email_from'];
+$config['smtp_crypto'] = 'tls';
+
+$config['modules_locations'] =
+	[APPPATH.'modules/' => '../modules/' ];
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://gry.melma.pl/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +58,8 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+//$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +100,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'polish';
 
 /*
 |--------------------------------------------------------------------------
@@ -223,7 +247,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1; // Default: 0
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +348,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = $cf['auth']['encryption_key'];
 
 /*
 |--------------------------------------------------------------------------
@@ -453,7 +477,7 @@ $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array();
+$config['csrf_exclude_uris'] = [];
 
 /*
 |--------------------------------------------------------------------------

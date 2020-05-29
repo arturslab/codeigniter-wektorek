@@ -1,0 +1,145 @@
+<?php if (isset($popup_id) && ! empty($popup_id)) { ?>
+
+	<div id="<?php echo $popup_id; ?>_palette" class="custom_popup palette-wrapper hidden">
+
+		<div id="close_<?php echo $popup_id; ?>_palette" class="popup_close">
+			<svg id="svg8" width="58.225" height="58.225" version="1.1" viewBox="0 0 15.406 15.405" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<defs id="defs14">
+					<symbol id="icon-x" viewBox="0 0 1024 1024">
+						<path id="path493" d="M 960,780.736 691.008,512 960,243.264 780.736,64 512,332.864 243.136,64 64,243.264 332.736,512 64,780.736 243.136,960 512,691.136 780.736,960 Z"/>
+					</symbol>
+				</defs>
+				<use id="close" transform="matrix(1.1279 0 0 1.1279 -1.1007 -1.1006)" width="100%" height="100%" style="fill:#333333" xlink:href="#icon-x"/>
+			</svg>
+		</div>
+
+
+
+        <?php if (isset($element_title) && $element_title) { ?>
+			<h3 class="text-light p-3"><?php echo $element_title; ?>:</h3>
+        <?php } ?>
+
+		<div class="palette-container palette-container-elements">
+            <?php if (isset($show_random_element) && $show_random_element) { ?>
+				<div class="item custom_bg_0">
+					<input type="radio" class="palette-custom-radio" id="palette_<?php echo $popup_id; ?>_item_0" name="radio_<?php echo $popup_id; ?>" value="0" checked/>
+
+					<svg id="svg0" width="73.582" height="59.785" version="1.1" viewBox="0 0 19.469 15.818" xmlns="http://www.w3.org/2000/svg">
+						<g id="svg_checkmark" transform="translate(-59.813 -218.03)">
+							<g id="use86732" class="svg_checkmark" transform="matrix(.019012 0 0 .019012 59.813 215.6)" style="fill:#333">
+								<title id="title798">checkmark</title>
+								<path id="path800" d="m192 384-192 192 384 384 640-640-192-192-448 448z"/>
+							</g>
+						</g>
+					</svg>
+
+					<label for="palette_<?php echo $popup_id; ?>_item_0" class="item-label">Losowy</label>
+
+				</div>
+            <?php } ?>
+
+
+            <?php
+            if (isset($elements) && ! empty($elements)) {
+                $rand_key = array_rand($elements);
+                $key = $elements[$rand_key];
+
+//				echo '******* ' . $popup_id.': '. $key;
+                foreach ($elements as $id => $i) {
+
+                	$n = 0;
+                    $checked = '';
+                	// zaznacz pierwszy element, jesli nie wyswietla sie osobny input dla losowego elementu
+					if(!$show_random_element && $i === $key) {
+                        $checked = 'checked';
+					}
+                	?>
+
+					<div class="item custom_bg_transparent">
+						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $popup_id; ?>_item_<?php echo $i; ?>" name="radio_<?php echo $popup_id; ?>" value="<?php echo $i; ?>" <?php echo $checked; ?>/>
+
+						<svg id="svg<?php echo $popup_id; ?>_<?php echo $i; ?>" width="73.582" height="59.785" version="1.1" viewBox="0 0 19.469 15.818" xmlns="http://www.w3.org/2000/svg">
+							<g id="svg_checkmark" class="svg_checkmark" transform="translate(-59.813 -218.03)">
+								<g id="use86732" class="svg_checkmark" transform="matrix(.019012 0 0 .019012 59.813 215.6)" style="fill:#333">
+									<title id="title798">checkmark</title>
+									<path id="path800" d="m192 384-192 192 384 384 640-640-192-192-448 448z"/>
+								</g>
+							</g>
+						</svg>
+
+						<label for="palette_<?php echo $popup_id; ?>_item_<?php echo $i; ?>" class="item-label"><img src="/assets/images/radio_<?php echo $popup_id; ?>_<?php echo $i; ?>.png" alt="Avatar part" class="img"></label>
+
+					</div>
+                    <?php
+					$n++;
+                }
+            }
+            ?>
+
+		</div>
+		<!-- elements palette -->
+
+
+        <?php
+        if (isset($colors) && ! empty($colors)) {
+            ?>
+            <?php if (isset($color_title) && $color_title) { ?>
+				<h3 class="text-light p-3"><?php echo $color_title; ?>:</h3>
+            <?php } ?>
+			<div class="palette-container palette-container-colors">
+
+                <?php if (isset($show_random_color) && $show_random_color) { ?>
+					<div class="item custom_bg_0">
+						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $popup_id; ?>_item_0" name="radio_<?php echo $popup_id; ?>_color" value="0" checked/>
+
+						<svg id="svg0" width="73.582" height="59.785" version="1.1" viewBox="0 0 19.469 15.818" xmlns="http://www.w3.org/2000/svg">
+							<g id="svg_checkmark" class="svg_checkmark" transform="translate(-59.813 -218.03)">
+								<g id="use86732" class="svg_checkmark" transform="matrix(.019012 0 0 .019012 59.813 215.6)" style="fill:#333">
+									<title id="title798">checkmark</title>
+									<path id="path800" d="m192 384-192 192 384 384 640-640-192-192-448 448z"/>
+								</g>
+							</g>
+						</svg>
+
+						<label for="palette_<?php echo $popup_id; ?>_item_0" class="item-label">Losowy</label>
+
+					</div>
+                <?php } ?>
+
+                <?php
+                foreach ($colors as $id => $v) {
+                    ?>
+					<div class="item custom_bg_<?php echo $id; ?>">
+						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $popup_id; ?>_item_<?php echo $id; ?>_color" name="radio_<?php echo $popup_id; ?>_color" value="<?php echo $id; ?>"/>
+
+						<svg id="svg<?php echo $popup_id; ?>_<?php echo $id; ?>" width="73.582" height="59.785" version="1.1" viewBox="0 0 19.469 15.818" xmlns="http://www.w3.org/2000/svg">
+							<g id="svg_checkmark" class="svg_checkmark" transform="translate(-59.813 -218.03)">
+								<g id="use86732" class="svg_checkmark" transform="matrix(.019012 0 0 .019012 59.813 215.6)" style="fill:#333">
+									<title id="title798">checkmark</title>
+									<path id="path800" d="m192 384-192 192 384 384 640-640-192-192-448 448z"/>
+								</g>
+							</g>
+						</svg>
+
+						<label for="palette_<?php echo $popup_id; ?>_item_<?php echo $id; ?>_color" class="item-label"></label>
+
+					</div>
+
+                    <?php
+                }
+                ?>
+
+			</div>		<!-- colors palette -->
+        <?php } ?>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 col-xl-2 offset-md-4 offset-xl-5">
+					<a class="btn btn-lg btn-block btn-warning mb-3 js-close" data-close="<?php echo $popup_id; ?>_palette" data-target="<?php echo $popup_id; ?>_card">OK, wybrałem</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+<?php } ?>

@@ -1,0 +1,4 @@
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} gry\.melma\.pl [NC]
+#RewriteCond %{REQUEST_URI} ^/$
+#RewriteRule ^(.*)$ /public/$1 [L]
