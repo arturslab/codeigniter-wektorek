@@ -70,6 +70,9 @@ class Avatarcore
             'beard'      => [
                 'gender' => 'male',
             ],
+            'eyeglasses'      => [
+                'gender' => 'male',
+            ],
             'background' => [
                 'gender' => 'male',
             ],
@@ -345,16 +348,16 @@ class Avatarcore
 
             foreach ($data['editable_items'] as $v) {
                 if ($v['visible'] == 'y') {
-                    $css .= '#' . $v['id_name'] . ' {opacity:1 !important; fill: ' . $v['fill'] . ' !important}';
+                    $css .= '#' . $v['id_name'] . ' {display:inline !important; fill: ' . $v['fill'] . ' !important}';
                 } else {
-                    $css .= '#' . $v['id_name'] . ' {opacity:0 !important;}';
+                    $css .= '#' . $v['id_name'] . ' {display:none !important;}';
                 }
             }
             foreach ($data['not_editable_items'] as $v) {
                 if ($v['visible'] != 'y') {
-                    $css .= '#' . $v['id_name'] . ' {opacity:0 !important;}';
+                    $css .= '#' . $v['id_name'] . ' {display:none !important;}';
                 } else {
-                    $css .= '#' . $v['id_name'] . ' {opacity:1 !important;}';
+                    $css .= '#' . $v['id_name'] . ' {display:inline !important;}';
                 }
             }
         }

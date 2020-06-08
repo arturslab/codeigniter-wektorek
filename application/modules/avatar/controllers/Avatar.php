@@ -34,10 +34,11 @@ class Avatar extends MY_Controller
             'head'       => ['min' => 1, 'max' => 1],
             'mouth'      => ['min' => 1, 'max' => 1],
             'hair'       => ['min' => 1, 'max' => 14],
-            'eye'        => ['min' => 1, 'max' => 4],
+            'eye'        => ['min' => 1, 'max' => 6],
             'nose'       => ['min' => 1, 'max' => 1],
             'beard'      => ['min' => 1, 'max' => 4],
             'blouse'     => ['min' => 1, 'max' => 8],
+            'eyeglasses'     => ['min' => 1, 'max' => 4],
         ];
 
         $avatar_config = [
@@ -137,6 +138,8 @@ class Avatar extends MY_Controller
 
         //var_dump($this->input->post('hair'));die();
         $this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_rules('eyeglasses', 'eyeglasses', 'required|is_natural');
+        $this->form_validation->set_rules('eyeglasses_color', 'eyeglasses_color', 'required|is_natural');
         $this->form_validation->set_rules('hair', 'hair', 'required|is_natural');
         $this->form_validation->set_rules('hair_color', 'hair_color', 'required|is_natural');
         $this->form_validation->set_rules('blouse_color', 'blouse_color', 'required|is_natural');
@@ -149,25 +152,28 @@ class Avatar extends MY_Controller
         } else {
 
             $hair_color = $this->getColorValue($this->input->post('hair_color'), true);
+            $eyeglasses_color = $this->getColorValue($this->input->post('eyeglasses_color'), true);
             $blouse_color = $this->getColorValue($this->input->post('blouse_color'), true);
 
             //echo 'fsdfs';
+            $data['eyeglasses']             = $this->input->post('eyeglasses');
+            $data['eyeglasses_color']             = $eyeglasses_color;
             $data['hair']             = $this->input->post('hair');
-            $data['blouse']           = $this->input->post('blouse');
-            $data['eye']              = $this->input->post('eye');
-            $data['mouth']            = 1;
-            $data['nose']             = 1;
-            $data['head']             = 1;
-            $data['background']       = 1;
             $data['hair_color']      = $hair_color;
+            $data['blouse']           = $this->input->post('blouse');
             $data['blouse_color']      = $blouse_color;
-            $data['mouth_color']      = '111';
-            $data['eye_color']      = '111';
-            $data['nose_color']      = '111';
-            $data['head_color']       = '111';
-            $data['background_color'] = '111';
+            $data['eye']              = $this->input->post('eye');
+            $data['eye_color']      = '#111';
+            $data['mouth']            = 1;
+            $data['mouth_color']      = '#111';
+            $data['nose']             = 1;
+            $data['nose_color']      = '#111';
+            $data['head']             = 1;
+            $data['head_color']       = '#111';
+            $data['background']       = 1;
+            $data['background_color'] = '#212121';// gdy bledna wartosc - random color...
             $this->avatarcore->setUserPreferences($data);
-//            $this->avatarcore->dd();
+            //$this->avatarcore->dd();
             // Cache
             $cache_folder     = '/images/avatars/';
             $avatar_hash      = $this->avatarcore->getAvatarHash();
