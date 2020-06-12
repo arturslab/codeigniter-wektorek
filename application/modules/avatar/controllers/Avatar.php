@@ -15,6 +15,8 @@ class Avatar extends MY_Controller
 
     private $colors_palette;
 
+    private $avatar_config;
+
     public function __construct()
     {
         parent::__construct();
@@ -41,7 +43,7 @@ class Avatar extends MY_Controller
             'eyeglasses'     => ['min' => 1, 'max' => 4],
         ];
 
-        $avatar_config = [
+        $this->avatar_config = [
             'cache_dir'    => '/images/avatars/',
             'svg_path'     => dirname(__FILE__, 2) . '/assets/images/svg/',
             'svg_filename' => 'faces_all_in_one_optimized.svg',
@@ -51,8 +53,8 @@ class Avatar extends MY_Controller
         $this->colors_palette = $this->config->item('custom_colors');
 
 //        $this->load->helper('url');
-        $this->load->library('avatarcore', $avatar_config);
-        $this->load->library('avatarpng', $avatar_config);
+        $this->load->library('avatarcore', $this->avatar_config);
+        $this->load->library('avatarpng', $this->avatar_config);
 
         // Domyslna strona do przekierowan
         $this->defaultPageUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name') . '/';
@@ -93,7 +95,7 @@ class Avatar extends MY_Controller
         $this->viewData['js_name']  = $this->config->item('module_name') . '.js';
         $this->viewData['error']    = $this->session->get_userdata()['error'] ?? '';
         //$this->viewData['title'] = 'Avatar';
-        $this->viewData['form_action'] = '/admin_panel/login/verify';
+        //$this->viewData['form_action'] = '/admin_panel/login/verify';
 
         $this->load->view('page_head.phtml', $this->viewData);
         $this->load->view('avatar.phtml', $this->viewData);
@@ -128,25 +130,74 @@ class Avatar extends MY_Controller
         return $color;
     }
 
-    public function draw()
+    // Pobierz losowy ID elementu z tablicy konfiguracyjnej
+    private function getRandomElement($elementName) {
+        if(isset($elementName) && array_key_exists($elementName, $this->avatar_config['avatars_data'])) {
+            $min = (int) $this->avatar_config['avatars_data'][$elementName]['min'];
+            $max = (int) $this->avatar_config['avatars_data'][$elementName]['max'];
+
+            $rand_id = rand($min, $max);
+
+            return $rand_id;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * Główna metoda generują plik PNG z awatarem
+     *
+     * @param string $ext
+     */
+    public function draw(string $ext = 'png')
     {
 
+        // Ustal dozwolony rodzaj wygenerowanego pliku z awatarem
+        if(!in_array($ext, ['png', 'svg'])) {
+            $ext = 'png';
+        }
         //https://stackoverflow.com/questions/37185883/do-form-validation-with-jquery-ajax-in-codeigniter
-
+//        print_r($_REQUEST);
         $this->load->helper(['form', 'url']);
         $this->load->library('form_validation');
 
+//        $this->load->library(array('my_form_validation'));//load my library here $this->form_validation->run($this);
+//        $this->form_validation->run($this);
+
         //var_dump($this->input->post('hair'));die();
         $this->form_validation->set_error_delimiters('', '');
-        $this->form_validation->set_rules('eyeglasses', 'eyeglasses', 'required|is_natural');
-        $this->form_validation->set_rules('eyeglasses_color', 'eyeglasses_color', 'required|is_natural');
-        $this->form_validation->set_rules('hair', 'hair', 'required|is_natural');
-        $this->form_validation->set_rules('hair_color', 'hair_color', 'required|is_natural');
-        $this->form_validation->set_rules('blouse_color', 'blouse_color', 'required|is_natural');
-        $this->form_validation->set_rules('blouse', 'blouse', 'required|is_natural');
-        $this->form_validation->set_rules('eye', 'eye', 'required|is_natural');
 
-        if ($this->form_validation->run() == false) {
+        /*
+        echo "\n <<< REQUEST_METHOD >>> \n";
+        print_r($_SERVER['REQUEST_METHOD']);
+        echo "\n <<< REQUEST >>> \n";
+        print_r($_REQUEST);
+        echo "\n <<< POST >>> \n";
+        print_r($_POST);
+        echo "\n <<< INPUT >>> \n";
+        print_r($this->input->post('eyeglasses'));
+        die('zzzzzzz');
+        */
+
+       // $this->form_validation->set_rules('eyeglasses', 'eyeglasses', 'callback_item_check', ['item_check' => 'Nieprawidłowa wartość dla wyboru okularów.'] );
+        $this->form_validation->set_rules('eyeglasses', 'eyeglasses', 'callback_item_check' );
+        $this->form_validation->set_rules('hair', 'hair', 'callback_item_check');
+        $this->form_validation->set_rules('blouse', 'blouse', 'callback_item_check');
+        $this->form_validation->set_rules('eye', 'eye', 'callback_item_check');
+        $this->form_validation->set_rules('eyeglasses_color', 'eyeglasses_color', 'callback_item_check');
+        $this->form_validation->set_rules('hair_color', 'hair_color', 'callback_item_check');
+        $this->form_validation->set_rules('blouse_color', 'blouse_color', 'callback_item_check');
+        $this->form_validation->set_message('item_check', 'Nieprawidłowa wartość dla pola {field}');
+
+
+
+
+
+
+
+
+        if ($this->form_validation->run($this) == false) {
             //$this->load->view('myform');
             echo validation_errors();
         } else {
@@ -155,8 +206,12 @@ class Avatar extends MY_Controller
             $eyeglasses_color = $this->getColorValue($this->input->post('eyeglasses_color'), true);
             $blouse_color = $this->getColorValue($this->input->post('blouse_color'), true);
 
+
+
+
+
             //echo 'fsdfs';
-            $data['eyeglasses']             = $this->input->post('eyeglasses');
+            //$data['eyeglasses']             = $this->input->post('eyeglasses');
             $data['eyeglasses_color']             = $eyeglasses_color;
             $data['hair']             = $this->input->post('hair');
             $data['hair_color']      = $hair_color;
@@ -172,8 +227,34 @@ class Avatar extends MY_Controller
             $data['head_color']       = '#111';
             $data['background']       = 1;
             $data['background_color'] = '#212121';// gdy bledna wartosc - random color...
+
+            foreach($this->avatar_config['avatars_data'] as $name => $v) {
+                $input = $this->input->post($name);
+
+                // Czy element ma wybraną opcję "losowy", "nie pokazuj", lub numeryczną
+                if($input == 'random'){
+                    $data[$name]  = $this->getRandomElement($name);
+                }
+                else {
+                    $data[$name] = $input;
+                }
+            }
+
+/*
+            // Czy wybrano opcję "ukryj element" lub "losowy"
+            $input['eyeglasses'] = $this->input->post('eyeglasses');
+            if($input['eyeglasses']=='random'){
+
+                $data['eyeglasses']  = $this->getRandomElement('eyeglasses');
+            }
+            else {
+                $data['eyeglasses'] = $input['eyeglasses'];
+            }
+            */
+
             $this->avatarcore->setUserPreferences($data);
             //$this->avatarcore->dd();
+
             // Cache
             $cache_folder     = '/images/avatars/';
             $avatar_hash      = $this->avatarcore->getAvatarHash();
@@ -196,9 +277,16 @@ class Avatar extends MY_Controller
                 $this->avatarpng->setSvgData($svg_data_string);
 //                 $this->avatarpng->dd();
 
-                if ($res = $this->avatarpng->displayImage(true)) {
-                    echo $res;
+                if($ext === 'png') {
+                    if ($res = $this->avatarpng->displayImage(true)) {
+                        echo $res;
+                    }
                 }
+                elseif($ext === 'svg') {
+
+                }
+
+
             }
 
         }
@@ -206,8 +294,30 @@ class Avatar extends MY_Controller
 
     }
 
-    // Zwraca adres URL do losowego pliku PNG
-    public function drawRandom() {
+
+    /**
+     * Walidacja elementów kreatora. Dozwolene indeksy elementów, losowy element lub brak
+     *
+     * @param $str Id elementu (np. okularów), random (np. losowe okulary), none (brak okularów)
+     *
+     * @return bool
+     */
+    public function item_check($str) {
+
+        if(is_numeric($str) || in_array($str, ['none', 'random'])){
+            return true;
+        }
+        else {
+           // $this->form_validation->set_message('custom_validation', "Come on, don't act like spammer!");
+            return FALSE;
+        }
+    }
+
+    /**
+     * Zwraca adres URL do losowego pliku PNG
+     * Uwaga - musi być zapisany przynajmniej 1 plik PNG z zwatarem
+     */
+    public function getRandom() {
         $this->avatarpng->init();
         $url = $this->avatarpng->getRandomPng();
         if($url) {

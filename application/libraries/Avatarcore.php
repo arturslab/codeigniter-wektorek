@@ -310,8 +310,15 @@ class Avatarcore
 
                 foreach ($this->avatar_customization['elements'] as $element_name => $v) {
                     if (isset($data[$element_name]) && ! empty($data[$element_name])) {
-                        $color = isset($data[$element_name . '_color']) ? $data[$element_name . '_color'] : null;
-                        $this->setCustomItem($element_name, $data[$element_name], $color);
+
+                        // Jeśli user wybrał opcję "nie pokazuj elementu"
+                        if($data[$element_name]=='none') {
+                            $this->hideCustomItem($element_name);
+                        }
+                        else {
+                            $color = isset($data[$element_name . '_color']) ? $data[$element_name . '_color'] : null;
+                            $this->setCustomItem($element_name, $data[$element_name], $color);
+                        }
                     }
                 }
             }
@@ -334,6 +341,13 @@ class Avatarcore
             $this->items[$element_name]['not_editable_items'] = $this->prepareDefaultItem($element_name, $id, false);
         }
 
+    }
+
+    // Ukryj wybrany element (np. okulary) - do użycia w kontrolerze
+    public function hideCustomItem($element_name) {
+        if(isset($this->items[$element_name])) {
+            unset($this->items[$element_name]);
+        }
     }
 
 
