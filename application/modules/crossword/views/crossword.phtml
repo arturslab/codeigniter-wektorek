@@ -6,4 +6,48 @@
 
 	<?php $this->load->view('notifications.phtml'); ?>
 
+	<?php if($categories && !empty($categories)) { ?>
+		<div class="nav_categories">
+		<?php foreach( $categories as $v) { ?>
+			<a href="#" class="btn btn-primary js-category" data-category="<?php echo $v['id']; ?>"><?php echo $v['name']; ?> [<?php echo $v['id']; ?>]</a>
+		<?php } ?>
+		</div>
+	<?php } ?>
+
 </div>
+
+<script>
+	var module_path = '<?php echo $module_path; ?>'
+	var module_url = '<?php echo $module_url; ?>';
+
+	$(function() {
+
+		$(".js-category").on('click', function(e){
+			e.preventDefault();
+			let category = $(this).data('category');
+
+			$.ajax({
+				method: 'POST',
+				url: module_url+'ajaxGetCrossword/',
+				data: {
+					category: category,
+				},
+				// data: $(this).serialize(),
+				// dataType:"json",
+			})
+			.done(function (data) {
+				console.log(data)
+
+
+			})
+			.always(function() {
+				console.log('pobieram slowa kategorii ' + category);
+
+			});
+
+
+		})
+
+	})
+
+</script>

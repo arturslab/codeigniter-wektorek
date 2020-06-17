@@ -53,7 +53,7 @@ class Dashboard extends MY_Controller
 		$this->viewData['css_name'] = $this->config->item('module_name') . '.css';
 		$this->viewData['js_name'] = $this->config->item('module_name') . '.js';
 		$this->viewData['error'] = $this->session->get_userdata()['error'] ?? '';
-		$this->viewData['title'] = 'Dashboard';
+		$this->viewData['title'] = 'Wektorek.pl';
 		$this->viewData['form_action'] = '/admin_panel/login/verify';
 		
 		$this->load->view('page_head.phtml', $this->viewData);

@@ -18,12 +18,28 @@
 		-->
 
             <?php if (isset($popup_element_title) && $popup_element_title) { ?>
-				<h3 class="text-light p-3"><?php echo $popup_element_title; ?>:</h3>
+				<h3 class="text-light pt-3 pl-3 pr-3 pb-0"><?php echo $popup_element_title; ?>:</h3>
             <?php } ?>
+
+			<!-- Legenda-->
+            <?php if ($popup_element_allow_uncheck || $popup_element_allow_random) { ?>
+				<div class="alert alert-custom alert-custom-inverse m-4" role="alert">
+					<img class="glyphicon" src="/assets/images/mascot_alert_info_opt.svg" alt="Information icon">
+					<div>
+					<?php if ($popup_element_allow_uncheck) { ?>
+						<div><?php printf($popup_element_uncheck_legend, '<img src="/assets/images/btn_none_opt.svg" width="32" class="bg_orange" alt="">'); ?></div>
+					<? }?>
+
+					<?php if ($popup_element_allow_random && $popup_element_random_legend) { ?>
+						<div><?php printf($popup_element_random_legend, '<img src="/assets/images/btn_random_opt.svg" width="32" class="bg_orange" alt="">'); ?></div>
+					<? }?>
+					</div>
+				</div>
+            <? }?>
 
 			<div class="palette-container palette-container-elements">
                 <?php if (isset($popup_element_allow_uncheck) && $popup_element_allow_uncheck) { ?>
-					<div class="item custom_bg_transparent">
+					<div class="item custom_bg_transparent item_radio_element_uncheck">
 						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_999" name="radio_<?php echo $item_id; ?>" value="none"/>
 						<label for="palette_<?php echo $item_id; ?>_item_999" class="item-label">
 							<svg id="svg8" version="1.1" viewBox="0 0 63.464 52.209" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +50,7 @@
                 <?php } ?>
 
                 <?php if (isset($popup_element_allow_random) && $popup_element_allow_random) { ?>
-					<div class="item custom_bg_transparent">
+					<div class="item custom_bg_transparent item_radio_element_random">
 						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_0" name="radio_<?php echo $item_id; ?>" value="random" checked/>
 						<label for="palette_<?php echo $item_id; ?>_item_0" class="item-label">
 							<svg id="svg8" version="1.1" viewBox="0 0 63.464 52.209" xmlns="http://www.w3.org/2000/svg">
@@ -90,8 +106,21 @@
             <?php
             if (isset($popup_colors) && ! empty($popup_colors)) {
                 ?><?php if (isset($popup_color_title) && $popup_color_title) { ?>
-					<h3 class="text-light p-3"><?php echo $popup_color_title; ?>:</h3>
+					<h3 class="text-light pt-3 pl-3 pr-3 pb-0"><?php echo $popup_color_title; ?>:</h3>
                 <?php } ?>
+
+
+				<!-- Legenda-->
+                <?php if ($popup_color_allow_random ) { ?>
+					<div class="alert alert-custom alert-custom-inverse m-4" role="alert">
+						<img class="glyphicon" src="/assets/images/mascot_alert_info_opt.svg" alt="Information icon">
+						<div>
+							Kliknij <img src="/assets/images/btn_random_opt.svg" width="32" class="bg_orange rounded_AAA mx-auto_AAA" alt=""> aby wybrać losowy kolor.
+						</div>
+					</div>
+                <? }?>
+
+
 				<div class="palette-container palette-container-colors">
 
                     <?php if (isset($popup_color_allow_random) && $popup_color_allow_random) { ?>
@@ -123,7 +152,7 @@
                     <?php
                     foreach ($popup_colors as $id => $v) {
                         ?>
-						<div class="item custom_bg_<?php echo $id; ?>">
+						<div class="item custom_bg_<?php echo $item_id; ?>_<?php echo $id; ?>">
 							<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_<?php echo $id; ?>_color" name="radio_<?php echo $item_id; ?>_color" value="<?php echo $id; ?>"/>
 
 							<svg id="svg<?php echo $item_id; ?>_<?php echo $id; ?>" width="73.582" height="59.785" version="1.1" viewBox="0 0 19.469 15.818" xmlns="http://www.w3.org/2000/svg">

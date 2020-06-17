@@ -58,6 +58,7 @@ $autoload['packages'] =  [APPPATH.'third_party'];
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
+//$autoload['libraries'] = ['database', 'session'];
 $autoload['libraries'] = ['database', 'session'];
 
 /*

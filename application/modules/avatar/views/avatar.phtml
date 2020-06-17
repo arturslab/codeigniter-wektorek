@@ -12,11 +12,12 @@ $data[1] = [
     'popup_element_title' => 'Wybierz fryzurę',
     'popup_color_title' => 'Wybierz kolor włosów',
     'popup_element_allow_random' => true,
+    'popup_element_random_legend' => 'Kliknij %s aby wybierać losowo fryzury.',
     'popup_element_allow_uncheck' => true,
-    'popup_colors' => isset($custom_colors) ? $custom_colors : null,
+    'popup_element_uncheck_legend' => 'Kliknij %s aby usunąć włosy.',
+    'popup_colors' => isset($custom_colors['hair']) ? $custom_colors['hair'] : null,
     'popup_color_allow_random' => true,
 ];
-
 
 $data[2] = [
     'item_active' => true,
@@ -28,27 +29,29 @@ $data[2] = [
     'popup_element_title' => 'Wybierz rodzaj bluzki',
     'popup_color_title' => 'Wybierz kolor bluzki',
     'popup_element_allow_random' => true,
+    'popup_element_random_legend' => 'Kliknij %s aby wybierać losowo bluzki.',
     'popup_element_allow_uncheck' => false,
-    'popup_colors' => isset($custom_colors) ? $custom_colors : null,
+    'popup_element_uncheck_legend' => 'Kliknij %s aby usunąć bluzki.',
+    'popup_colors' => isset($custom_colors['blouse']) ? $custom_colors['blouse'] : null,
     'popup_color_allow_random' => true,
 ];
-
 
 $data[3] = [
     'item_active' => true,
     'item_nr' => 3,
     'item_id' => 'eye',
     'card_title' => 'Oczy',
-    'card_description' => 'Wybierz oczy dla swojej postaci',
+    'card_description' => 'Wybierz rodzaj i kolor oczu dla swojej postaci',
     'popup_elements' => range(1,6),
     'popup_element_title' => 'Wybierz rodzaj oczu',
     'popup_color_title' => 'Wybierz kolor oczu',
     'popup_element_allow_random' => true,
+    'popup_element_random_legend' => 'Kliknij %s aby wybierać losowo oczy.',
     'popup_element_allow_uncheck' => false,
-    'popup_colors' => null,
-    'popup_color_allow_random' => false,
+    'popup_element_uncheck_legend' => 'Kliknij %s aby usunąć oczy.',
+    'popup_colors' => isset($custom_colors['eye']) ? $custom_colors['eye'] : null,
+    'popup_color_allow_random' => true,
 ];
-
 
 $data[4] = [
     'item_active' => true,
@@ -60,12 +63,12 @@ $data[4] = [
     'popup_element_title' => 'Wybierz rodzaj okularów',
     'popup_color_title' => 'Wybierz kolor ramki okularów',
     'popup_element_allow_random' => true,
+    'popup_element_random_legend' => 'Kliknij %s aby wybierać losowo okulary.',
     'popup_element_allow_uncheck' => true,
-    'popup_colors' => isset($custom_colors) ? $custom_colors : null,
+    'popup_element_uncheck_legend' => 'Kliknij %s aby usunąć okulary.',
+    'popup_colors' => isset($custom_colors['eyeglasses']) ? $custom_colors['eyeglasses'] : null,
     'popup_color_allow_random' => true,
 ];
-
-
 
 ?>
 
@@ -76,34 +79,9 @@ $data[4] = [
 		color: #333;
 	}
 
-	h1 {
-		margin-bottom: 1rem;
-		margin-top: 1rem;
-	}
 
-	/* Colors */
 
-	.bg_orange {background-color: #FF9800;}
 
-	.border_orange {border-color: #FF5722;}
-
-	.text-highlight {
-		color:#FFC107;
-	}
-
-	.alert-custom {
-		border: solid 1px #d43226;
-		background: #FF5722;
-	}
-
-	.alert-custom .alert-link,
-	.alert-custom .alert-link:hover {
-		color: #fff;
-	}
-
-	.hidden {
-		display: none;
-	}
 
 
 
@@ -113,18 +91,28 @@ $data[4] = [
 
 	<?php
 if(isset($custom_colors)) {
-	foreach($custom_colors as $id => $v) {
+	foreach($custom_colors as $element => $list) {
+		foreach($list as $id => $v) {
 		?>
-	.custom_bg_<?php echo $id; ?> {background-color: <?php echo $v; ?>}
-
-	.custom_color_<?php echo $id; ?> {color: <?php echo $v; ?>}
-
-	<?php
+		.custom_bg_<?php echo $element; ?>_<?php echo $id; ?> {background-color: <?php echo $v; ?>}
+		.custom_color_<?php echo $element; ?>_<?php echo $id; ?> {color: <?php echo $v; ?>}
+		<?php
+		}
 	}
 }
  ?>
 
-	.custom_bg_43 .svg_checkmark {
+	.custom_bg_hair_4 .svg_checkmark,
+	.custom_bg_hair_5 .svg_checkmark,
+	.custom_bg_hair_15 .svg_checkmark,
+	.custom_bg_eye_2 .svg_checkmark,
+	.custom_bg_blouse_4 .svg_checkmark,
+	.custom_bg_blouse_5 .svg_checkmark,
+	.custom_bg_blouse_15 .svg_checkmark,
+	.custom_bg_eyeglasses_4 .svg_checkmark,
+	.custom_bg_eyeglasses_5 .svg_checkmark,
+	.custom_bg_eyeglasses_15 .svg_checkmark
+	{
 		fill: #d8d8d8 !important;
 	}
 
@@ -220,9 +208,9 @@ if(isset($custom_colors)) {
 	.palette-container .item .palette-custom-radio:checked ~ svg {
 		opacity: 1;
 	}
-
 	.palette-container.palette-container-colors .item.item_radio_color_random .palette-custom-radio:checked ~ svg {
-		margin-left: 40px;
+		margin-left: 14px;
+		margin-top: 3px;
 	}
 
 	.palette-container .item .item-label {
@@ -261,40 +249,21 @@ if(isset($custom_colors)) {
 		height: 55px;
 	}
 	.palette-container.palette-container-colors .item svg {
-		height: 40px;
+		height: 30px;
 		margin-top: -2px;
+		margin-left: -10px;
+	}
+
+	.item_radio_element_uncheck .item-label svg,
+	.item_radio_element_random .item-label svg {
+		width: 110px;
+		height: auto;
+		position: initial;
 	}
 
 
 
 
-
-	/* CARDS */
-
-
-	.card{
-		border: solid 5px transparent;
-		transition: .5s;
-		cursor:pointer;
-	}
-
-	.card.card-active,
-	.card:hover{
-		border: solid 5px #FF5722;
-
-		transform: scale(1.05);
-		z-index: 2;
-		box-shadow: 2px 2px 2px #000;
-	}
-
-	.card .step_number {
-		position: absolute;
-		font-weight: 700;
-		font-size: 2em;
-		display: block;
-		text-align: center;
-		width: 100%;
-	}
 
 
 	/* BUTTONS */
@@ -403,6 +372,21 @@ if(isset($custom_colors)) {
 		.palette-container.palette-container-colors .item .item-label {
 			font-size: 1em;
 		}
+		.palette-container.palette-container-colors .item svg {
+			height: 40px;
+			margin-top: -2px;
+		}
+		.palette-container.palette-container-colors .item.item_radio_color_random .palette-custom-radio:checked ~ svg {
+			margin-left: 40px;
+		}
+
+		.item_radio_element_uncheck .item-label svg,
+		.item_radio_element_random .item-label svg {
+			width: 110px;
+			height: auto;
+			position: initial;
+		}
+
 
 	}
 
@@ -413,14 +397,29 @@ if(isset($custom_colors)) {
 		.palette-container.palette-container-colors .item {
 			flex-basis: 12.5%;
 		}
+		.palette-container.palette-container-colors .item svg {
+			height: 40px;
+			margin-top: -7px;
+		}
+		.palette-container.palette-container-colors .item.item_radio_color_random .palette-custom-radio:checked ~ svg {
+			margin-left: 40px;
+			margin-top: -1px;
+		}
+
+		.item_radio_element_uncheck .item-label svg,
+		.item_radio_element_random .item-label svg {
+			margin-left: -6px;
+		}
 	}
 
 
 </style>
 <div class="container">
 
-	<h1 class="text-center"><?php echo $title; ?></h1>
-
+	<div class="page-header">
+		<img src="/assets/images/mascot_wizard_opt.svg" alt="">
+		<h1 class="text-center"><?php echo $title; ?></h1>
+	</div>
     <?php echo validation_errors(); ?>
 
     <?php $this->load->view('notifications.phtml'); ?>
@@ -430,7 +429,7 @@ if(isset($custom_colors)) {
 	<div id="wrapper">
 
 		<div class="alert text-white bg-dark" role="alert">
-			Wyczaruj swojego awatarka w <?php echo count($data)+1; ?> krokach.<br>Awatara możesz używać w serwisach społecznościowych, czatach, komunikatorach. Wszędzie tam, gdzie masz ochotę.
+			<div>Wyczaruj swojego awatarka w <?php echo count($data)+1; ?> krokach.<br>Awatara możesz używać w serwisach społecznościowych, czatach, komunikatorach. Wszędzie tam, gdzie masz ochotę.</div>
 		</div>
 
 		<div class="form mb-3">
@@ -447,10 +446,10 @@ if(isset($custom_colors)) {
 
 				<div class="col mb-3">
 					<div id="finish_card" class="card h-100 text-white bg-dark">
-						<span class="step_number text-highlight">Krok 5</span>
+						<span class="step_number text-title text-highlight">Krok 5</span>
 						<img class="card-img-top p-3" src="/assets/images/choose_avatar.svg" alt="Choose avatar">
 						<div class="card-body d-flex flex-column">
-							<h5 class="card-title mt-auto">Gotowe</h5>
+							<h5 class="card-title text-title mt-auto">Gotowe</h5>
 							<p class="card-text mt-auto">Teraz możesz zobaczyć swoją postać</p>
 							<a href="#" class="btn btn-warning btn-block mt-auto">Pokaż awatarka</a>
 						</div>
@@ -467,14 +466,18 @@ if(isset($custom_colors)) {
 
         <?php //echo $svg_image_data; ?>
 
-		<div id="preview" class="row">
+		<div class="row">
 			<div class="col-md-3 mb-3 text-center" id="preview">
 				<img src="" class="img-fluid rounded-circle">
 			</div>
 			<div class="col-md-9" id="result_url">
-				<div class="alert alert-custom hidden" role="alert">Adres URL do Twojego awatara:<br>
-					<small>(Kliknij w adres, aby otworzyć obrazek w nowym oknie)</small><br>
-					<span class="text-break"></span>
+				<div class="alert alert-custom hidden" role="alert">
+					<img class="glyphicon" src="/assets/images/mascot_alert_info_opt.svg" alt="Information icon">
+					<div>
+						Adres URL do Twojego awatara:<br>
+						<small>(Kliknij w adres, aby otworzyć obrazek w nowym oknie)</small><br>
+						<span class="text-break"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -493,15 +496,12 @@ foreach($data as $d) {
 
 <div class="m-5"></div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-
 <script>
 	var module_path = '<?php echo $module_path; ?>'
 	var module_url = '<?php echo $module_url; ?>';
 
 
-	$(document).ready(function () {
+	$(function() {
 
 		function openPopup(target) {
 
@@ -516,7 +516,7 @@ foreach($data as $d) {
 		function getRandomAvatar(){
 			$.ajax({
 				method: 'GET',
-				url: module_url+'getRandom/',
+				url: module_url+'get_random/',
 			})
 			.done(function (data) {
 				// console.log(data)
@@ -548,17 +548,19 @@ foreach($data as $d) {
 			let eye = $("input[name='radio_eye']:checked").val()
 			let eyeglasses = $("input[name='radio_eyeglasses']:checked").val()
 			let hair_color = $("input[name='radio_hair_color']:checked").val()
+			let eye_color = $("input[name='radio_eye_color']:checked").val()
 			let blouse_color = $("input[name='radio_blouse_color']:checked").val()
 			let eyeglasses_color = $("input[name='radio_eyeglasses_color']:checked").val()
 
 			$.ajax({
 				method: 'POST',
-				url: module_url+'draw/',
+				url: module_url+'draw_avatar/',
 				data: {
 					hair: hair,
 					blouse: blouse,
 					eye: eye,
 					eyeglasses: eyeglasses,
+					eye_color: eye_color,
 					hair_color: hair_color,
 					blouse_color: blouse_color,
 					eyeglasses_color: eyeglasses_color,

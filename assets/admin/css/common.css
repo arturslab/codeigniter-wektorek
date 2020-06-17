@@ -1,0 +1,4 @@
+/* Tables */
+tr.text-danger td {
+	text-decoration: line-through;
+}

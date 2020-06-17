@@ -22,7 +22,7 @@ class Avatar extends MY_Controller
         parent::__construct();
 
         // Load default module model
-        $this->load->model(__CLASS__ . 'Model');
+//        $this->load->model(__CLASS__ . 'Model');
 
 
         $this->logsAttr = [
@@ -50,7 +50,148 @@ class Avatar extends MY_Controller
             'avatars_data' => $avatars_data,
         ];
 
-        $this->colors_palette = $this->config->item('custom_colors');
+
+// Paleta predefiniowanych kolorów
+        $config['custom_colors'] = [
+            1 => '#f8c09d',
+            2 => '#ef937e',
+            3 => '#ea676c',
+            4 => '#fff79c',
+            5 => '#fed883',
+            6 => '#fdbe3f',
+            7 => '#ec7523',
+            8 => '#e3482c',
+            9 => '#dc1c4b',
+            10 => '#b31e48',
+            11 => '#ee8eb4',
+            12 => '#dd527c',
+            13 => '#dc166d',
+            14 => '#9b1d5a',
+            15 => '#6f1e49',
+            16 => '#dd94c1',
+            17 => '#b557a1',
+            18 => '#612d82',
+            19 => '#432355',
+            20 => '#5e79bc',
+            21 => '#87d1ee',
+            22 => '#2bb3cd',
+            23 => '#2276bc',
+            24 => '#1d5c87',
+            25 => '#7ecdca',
+            26 => '#30b1ad',
+            27 => '#1f8b95',
+            28 => '#50b86b',
+            29 => '#c9db53',
+            30 => '#8fc23f',
+            31 => '#d0ad9a',
+            32 => '#9a605c',
+            33 => '#66342d',
+            34 => '#311a12',
+            35 => '#d0e2ee',
+            36 => '#aabfd0',
+            37 => '#7d8e9e',
+            38 => '#5b6571',
+            39 => '#3a4d5c',
+            40 => '#143441',
+            41 => '#0f2437',
+            42 => '#000000',
+            43 => '#333333',
+            44 => '#808080',
+            45 => '#cccccc',
+            46 => '#ececec',
+            47 => '#f5f6e8',
+            48 => '#ffffff',
+        ];
+
+        $config['eye_colors'] = [
+            1 => '#808080',
+            2 => '#1a1a1a',
+            3 => '#3366cc',
+            4 => '#99cc33',
+            5 => '#cc0000',
+            6 => '#804d00',
+        ];
+
+        $config['hair_colors'] = [
+            1 => '#fbfbfb',
+            2 => '#bfbfbf',
+            3 => '#808080',
+            4 => '#404040',
+            5 => '#1a1a1a',
+            6 => '#19aeff',
+            7 => '#6699ff',
+            8 => '#3366cc',
+            9 => '#003399',
+            10 => '#d76cff',
+            11 => '#ba00ff',
+            12 => '#99cc33',
+            13 => '#00cc00',
+            14 => '#669900',
+            15 => '#804d00',
+            16 => '#ffff3e',
+            17 => '#ffcc00',
+            18 => '#ff9900',
+            19 => '#ff6600',
+            20 => '#cc0000',
+            21 => '#ff4141',
+            22 => '#ff5599',
+        ];
+
+        $config['eyeglasses_colors'] = [
+            1 => '#fbfbfb',
+            2 => '#bfbfbf',
+            3 => '#808080',
+            4 => '#404040',
+            5 => '#1a1a1a',
+            6 => '#19aeff',
+            7 => '#6699ff',
+            8 => '#3366cc',
+            9 => '#003399',
+            10 => '#d76cff',
+            11 => '#ba00ff',
+            12 => '#99cc33',
+            13 => '#00cc00',
+            14 => '#669900',
+            15 => '#804d00',
+            16 => '#ffff3e',
+            17 => '#ffcc00',
+            18 => '#ff9900',
+            19 => '#ff6600',
+            20 => '#cc0000',
+            21 => '#ff4141',
+            22 => '#ff5599',
+        ];
+
+        $config['blouse_colors'] = [
+            1 => '#fbfbfb',
+            2 => '#bfbfbf',
+            3 => '#808080',
+            4 => '#404040',
+            5 => '#1a1a1a',
+            6 => '#19aeff',
+            7 => '#6699ff',
+            8 => '#3366cc',
+            9 => '#003399',
+            10 => '#d76cff',
+            11 => '#ba00ff',
+            12 => '#99cc33',
+            13 => '#00cc00',
+            14 => '#669900',
+            15 => '#804d00',
+            16 => '#ffff3e',
+            17 => '#ffcc00',
+            18 => '#ff9900',
+            19 => '#ff6600',
+            20 => '#cc0000',
+            21 => '#ff4141',
+            22 => '#ff5599',
+        ];
+
+        $this->colors_palette['custom'] = $config['custom_colors'];
+        $this->colors_palette['hair'] = $config['hair_colors'];
+        $this->colors_palette['eye'] = $config['eye_colors'];
+        $this->colors_palette['eyeglasses'] = $config['eyeglasses_colors'];
+        $this->colors_palette['blouse'] = $config['blouse_colors'];
 
 //        $this->load->helper('url');
         $this->load->library('avatarcore', $this->avatar_config);
@@ -69,8 +210,7 @@ class Avatar extends MY_Controller
         $this->viewData['module_js']   = $this->config->item('module_name') . '.js';
         $this->viewData['module_name'] = $this->config->item('module_name');
         $this->viewData['module_path'] = '/application/modules/' . $this->config->item('module_name');
-        $this->viewData['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name')
-                                         . '/';
+        $this->viewData['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/avatar/';
     }
 
 
@@ -110,20 +250,26 @@ class Avatar extends MY_Controller
      * Opcjonalnie zwraca losowy kolor z tablicy lub pierwszą wartość tablicy kolorów, jeśli podano błędny index
      *
      * @param      $color_id - ID koloru z pliku konfiguracyjnego
+     * @param      $palette - Paleta koloró z pliku konfiguracyjnego (custom, eye, eyeglass)
      * @param bool $allow_random - Zezwalaj na losowy element, w przypadku błędnego indeksu koloru
      *
      * @return mixed
      */
-    private function getColorValue($color_id, $allow_random=false) {
-        if(isset($this->colors_palette[$color_id])) {
-            $color = $this->colors_palette[$color_id];
+    private function getColorValue($color_id, $allow_random=false, $palette='custom') {
+
+        if(!in_array($palette, ['custom', 'eye', 'eyeglasses', 'hair', 'blouse'])) {
+            $palette = 'custom';
+        }
+
+        if(isset($this->colors_palette[$palette][$color_id])) {
+            $color = $this->colors_palette[$palette][$color_id];
         }
         elseif($allow_random) {
-            $rand_key = array_rand($this->colors_palette);
-            $color = $this->colors_palette[$rand_key];
+            $rand_key = array_rand($this->colors_palette[$palette]);
+            $color = $this->colors_palette[$palette][$rand_key];
         }
         else {
-            $colors = $this->colors_palette;
+            $colors = $this->colors_palette[$palette];
             $color = reset($colors);
         }
 
@@ -150,7 +296,7 @@ class Avatar extends MY_Controller
      *
      * @param string $ext
      */
-    public function draw(string $ext = 'png')
+    public function draw_avatar(string $ext = 'png')
     {
 
         // Ustal dozwolony rodzaj wygenerowanego pliku z awatarem
@@ -185,6 +331,7 @@ class Avatar extends MY_Controller
         $this->form_validation->set_rules('hair', 'hair', 'callback_item_check');
         $this->form_validation->set_rules('blouse', 'blouse', 'callback_item_check');
         $this->form_validation->set_rules('eye', 'eye', 'callback_item_check');
+        $this->form_validation->set_rules('eye_color', 'eye_color', 'callback_item_check');
         $this->form_validation->set_rules('eyeglasses_color', 'eyeglasses_color', 'callback_item_check');
         $this->form_validation->set_rules('hair_color', 'hair_color', 'callback_item_check');
         $this->form_validation->set_rules('blouse_color', 'blouse_color', 'callback_item_check');
@@ -202,9 +349,10 @@ class Avatar extends MY_Controller
             echo validation_errors();
         } else {
 
-            $hair_color = $this->getColorValue($this->input->post('hair_color'), true);
-            $eyeglasses_color = $this->getColorValue($this->input->post('eyeglasses_color'), true);
-            $blouse_color = $this->getColorValue($this->input->post('blouse_color'), true);
+            $hair_color = $this->getColorValue($this->input->post('hair_color'), true, 'hair');
+            $eyeglasses_color = $this->getColorValue($this->input->post('eyeglasses_color'), true, 'eyeglasses');
+            $blouse_color = $this->getColorValue($this->input->post('blouse_color'), true, 'blouse');
+            $eye_color = $this->getColorValue($this->input->post('eye_color'), true, 'eye');
 
 
 
@@ -218,7 +366,7 @@ class Avatar extends MY_Controller
             $data['blouse']           = $this->input->post('blouse');
             $data['blouse_color']      = $blouse_color;
             $data['eye']              = $this->input->post('eye');
-            $data['eye_color']      = '#111';
+            $data['eye_color']      = $eye_color;
             $data['mouth']            = 1;
             $data['mouth_color']      = '#111';
             $data['nose']             = 1;
@@ -226,7 +374,7 @@ class Avatar extends MY_Controller
             $data['head']             = 1;
             $data['head_color']       = '#111';
             $data['background']       = 1;
-            $data['background_color'] = '#212121';// gdy bledna wartosc - random color...
+            $data['background_color'] = '#ffffff';// gdy bledna wartosc - random color...
 
             foreach($this->avatar_config['avatars_data'] as $name => $v) {
                 $input = $this->input->post($name);
@@ -259,11 +407,11 @@ class Avatar extends MY_Controller
             $cache_folder     = '/images/avatars/';
             $avatar_hash      = $this->avatarcore->getAvatarHash();
             $avatar_filename  = 'avatar_' . $avatar_hash . '.png';
-            $cached_file_path = $cache_folder . $avatar_filename;
+            $output_image = $cache_folder . $avatar_filename;
 
             //$this->avatarcore->dd();
-            if (file_exists($cached_file_path)) {
-                echo $cached_file_path;
+            if (file_exists($output_image)) {
+                echo $output_image;
             } else {
 
                 $custom_styles   = $this->avatarcore->getCssStyle();
@@ -278,8 +426,8 @@ class Avatar extends MY_Controller
 //                 $this->avatarpng->dd();
 
                 if($ext === 'png') {
-                    if ($res = $this->avatarpng->displayImage(true)) {
-                        echo $res;
+                    if ($output_image = $this->avatarpng->displayImage(true)) {
+                        echo $output_image;
                     }
                 }
                 elseif($ext === 'svg') {
@@ -317,7 +465,8 @@ class Avatar extends MY_Controller
      * Zwraca adres URL do losowego pliku PNG
      * Uwaga - musi być zapisany przynajmniej 1 plik PNG z zwatarem
      */
-    public function getRandom() {
+    public function get_random() {
+
         $this->avatarpng->init();
         $url = $this->avatarpng->getRandomPng();
         if($url) {
@@ -325,6 +474,7 @@ class Avatar extends MY_Controller
         }
         else {
             // TODO: Pokaż zaślepkę
+            echo 'default_avatar.png';
         }
 
     }

@@ -44,43 +44,110 @@ class Crossword extends MY_Controller
             redirect("http://{$_SERVER['HTTP_HOST']}/panel/users");
 		}
 
-        //set_flash('message', 'danger', 'lorem ipsum...');
+        set_flash('message', 'danger', 'lorem ipsum...');
 
 
 		// Odnotuj zdarzenie
 		$this->addLog('logs', 'info', 'Crossword', 'Test Crossword', true);
 
-		$this->viewData['css_name'] = $this->config->item('module_name') . '.css';
-		$this->viewData['js_name'] = $this->config->item('module_name') . '.js';
-		$this->viewData['error'] = $this->session->get_userdata()['error'] ?? '';
-		$this->viewData['title'] = 'Crossword';
-		$this->viewData['form_action'] = '/admin_panel/login/verify';
-		
+
+		$categories = $this->CrosswordModel->getCategories();
+
+//		$words = $this->CrosswordModel->getWords(1, 30, 6);
+//print_r($words);
+
+        // Default view data
+        $this->viewData['meta_title']       = 'Stwórz własnego awatara';
+        $this->viewData['meta_description'] = '';
+        $this->viewData['meta_keywords']    = '';
+        $this->viewData['title'] = 'Krzyżówki';
+        $this->viewData['module_css']  = $this->config->item('module_name') . '.css';
+        $this->viewData['module_js']   = $this->config->item('module_name') . '.js';
+        $this->viewData['module_name'] = $this->config->item('module_name');
+        $this->viewData['module_path'] = '/application/modules/' . $this->config->item('module_name');
+        $this->viewData['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name')
+                                         . '/';
+		$this->viewData['categories'] = $categories;
+
 		$this->load->view('page_head.phtml', $this->viewData);
 		$this->load->view('crossword.phtml', $this->viewData);
 		$this->load->view('page_footer.phtml');
 		$this->session->set_userdata('error', '');
 
 
-		
-		
-
-/*
-		if ($this->form_validation->run() == FALSE)
-		{
-			if ($this->input->get('logout')) {
-				$this->logout();
-			}
-
-			
-		}
-		else {
-			$this->login();
-		}
-		*/
-
         
 	}
+
+
+
+    public function ajaxGetCrossword(){
+        $this->load->helper(['form', 'url']);
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_rules('category', 'category', 'required|numeric|less_than[100]' );
+
+        if ($this->form_validation->run($this) == false) {
+            //$this->load->view('myform');
+            echo validation_errors();
+        } else {
+
+            $words = $this->CrosswordModel->getWords(1, 30, $this->input->post('category'));
+
+            $crossword = $this->getCrossword($words);
+            print_r($crossword);
+
+
+            echo 'ajax ok';
+
+        }
+
+    }
+
+
+        private function getCrossword($words)
+        {
+            // Zlicz maksymalną ilość pól na podstawie długości słów
+            $max_fields = 0;
+            foreach($words as $k => $word){
+                if(strlen($k) > $max_fields) {
+                    $max_fields = strlen($k);
+                }
+            }
+
+            //$crossword = new \Crossword\Crossword($cols_count, $rows_count, $words);
+            include APPPATH . 'third_party/Crossword/Crossword.php';
+            include APPPATH . 'third_party/Crossword/Generate/Generate.php';
+            echo 'lalalala';
+            $cols_count = $max_fields*3 + 2;
+            $rows_count = $max_fields*3 + 2;
+
+            $crossword = new Crossword($cols_count, $rows_count, $words);
+            $crossword->generate();
+
+            // Create new crossword
+//            $crossword = new \Crossword\Crossword($cols_count, $rows_count, $words);
+//            $crossword->generate(\Crossword\Generate\Generate::TYPE_RANDOM);
+            print_r($crossword);
+            die();
+//            $crossword->generate(\Crossword\Generate\Generate::TYPE_RANDOM);
+            //echo $crossword;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	function verify()
 	{

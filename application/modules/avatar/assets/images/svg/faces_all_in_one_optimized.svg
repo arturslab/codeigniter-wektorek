@@ -254,7 +254,7 @@
        sodipodi:nodetypes="csccccccccccccscc" />
     <ellipse
        style="display:none;fill:#333333;fill-opacity:1;stroke:none;stroke-width:1.05833328;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-       id="locked_eye_1_1"
+       id="eye_1_1"
        cx="44.601185"
        cy="192.81071"
        rx="2.1733632"
@@ -264,7 +264,7 @@
        rx="2.1733632"
        cy="192.81071"
        cx="55.940468"
-       id="locked_eye_1_2"
+       id="eye_1_2"
        style="display:none;fill:#333333;fill-opacity:1;stroke:none;stroke-width:1.05833328;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke" />
     <rect
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.39687499;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
@@ -315,7 +315,7 @@
        rx="2.1332033"
        cy="192.51886"
        cx="43.755318"
-       id="locked_eye_2_1"
+       id="eye_2_1"
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.43576938;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke" />
     <circle
        transform="scale(-1,1)"
@@ -333,7 +333,7 @@
     <ellipse
        transform="scale(-1,1)"
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.43576938;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-       id="locked_eye_2_4"
+       id="eye_2_4"
        cx="-56.786201"
        cy="192.51886"
        rx="2.1332033"
@@ -348,7 +348,7 @@
        inkscape:connector-curvature="0"
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.39687499;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="m 57.472,190.56542 c -1.2979,0.0165 -2.6192,0.50468 -3.6789,1.21078 a 2.7361718,2.7361718 0 0 0 -0.108,0.75293 2.7361718,2.7361718 0 0 0 1.6707,2.51974 c 2e-4,3e-5 0,5.3e-4 0,5.3e-4 0.7103,0.0873 1.4633,0.0748 2.189,-0.03 a 2.7361718,2.7361718 0 0 0 1.6118,-2.49029 2.7361718,2.7361718 0 0 0 -0.7576,-1.88877 c -0.3053,-0.054 -0.6154,-0.0789 -0.9276,-0.0749 z"
-       id="locked_eye_3_4" />
+       id="eye_3_4" />
     <path
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 52.1193,193.32113 c 3.032,-1.64291 6.0854,-2.4864 9.2925,-0.58362 l 0.2837,-0.0919 0.039,-0.71456 c -3.8248,-3.3104 -7.8402,-1.11936 -9.6156,1.39007 z"
@@ -363,7 +363,7 @@
        style="display:none;fill:#ffffff;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        inkscape:connector-curvature="0"
-       id="locked_eye_3_1"
+       id="eye_3_1"
        d="m 43.0697,190.56542 c 1.2979,0.0165 2.6192,0.50468 3.6789,1.21078 a 2.7361718,2.7361718 0 0 1 0.108,0.75293 2.7361718,2.7361718 0 0 1 -1.6707,2.51974 c -2e-4,3e-5 0,5.3e-4 0,5.3e-4 -0.7103,0.0873 -1.4633,0.0748 -2.189,-0.03 a 2.7361718,2.7361718 0 0 1 -1.6118,-2.49029 2.7361718,2.7361718 0 0 1 0.7576,-1.88877 c 0.3053,-0.054 0.6154,-0.0789 0.9275,-0.0749 z"
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.39687499;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke" />
     <path
@@ -376,11 +376,11 @@
        r="1.9878172"
        cy="192.88902"
        cx="44.601261"
-       id="locked_eye_4_1"
+       id="eye_4_1"
        style="display:none;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.39687502;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke" />
     <circle
        style="display:none;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.39687502;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-       id="locked_eye_4_2"
+       id="eye_4_2"
        cx="55.94051"
        cy="192.88902"
        r="1.9878172" />
@@ -429,7 +429,7 @@
        style="display:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.79375011;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        inkscape:connector-curvature="0" />
     <path
-       id="locked_eye_6_2"
+       id="eye_6_2"
        d="m 54.44837,188.53611 c -0.76962,0.003 -1.47278,0.34601 -1.87638,0.91467 -1.73849,2.44952 1.77348,6.56097 4.67723,7.70238 2.90375,-1.14141 6.41572,-5.25286 4.67722,-7.70238 -0.92249,-1.29979 -3.41122,-1.41833 -4.67722,0.99374 -0.71213,-1.35679 -1.81137,-1.91282 -2.80085,-1.90841 z"
        style="display:none;fill:#ff8080;stroke:none;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        inkscape:connector-curvature="0" />
@@ -446,7 +446,7 @@
        inkscape:connector-curvature="0"
        style="display:none;fill:#ff8080;stroke:none;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 46.09329,188.53611 c 0.76962,0.003 1.47278,0.34601 1.87638,0.91467 1.73849,2.44952 -1.77348,6.56097 -4.67723,7.70238 -2.90375,-1.14141 -6.41572,-5.25286 -4.67722,-7.70238 0.92249,-1.29979 3.41122,-1.41833 4.67722,0.99374 0.71213,-1.35679 1.81137,-1.91282 2.80085,-1.90841 z"
-       id="locked_eye_6_1" />
+       id="eye_6_1" />
     <rect
        transform="matrix(-0.97218677,0.23420692,0.23420692,0.97218677,0,0)"
        ry="0.80319941"

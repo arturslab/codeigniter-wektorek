@@ -20,28 +20,50 @@ class MY_Controller extends MX_Controller
     /** Current date @var string $date */
     public $date = null;
 
+
+    var $_container;
+    var $_modules;
+
+    /** Srodowisko produkcyjne (Prod) lub developerskie (Dev).
+     Do wyświetlania zmiennych pomocniczych dla developerow */
+    var $env;
+
     public function __construct()
     {
         parent::__construct();
 
-        $this->viewData['meta_title']       = 'Gry melma.pl';
+
+        $this->viewData['meta_title']       = 'Wektorek.pl';
         $this->viewData['meta_description'] = '';
         $this->viewData['meta_keywords']    = '';
-        $this->viewData['title']            = 'Gry Melma.pl';
+        $this->viewData['title']            = 'Wektorek.pl';
         $this->viewData['module_name']      = ''; // Nazwa modulu z pliku konfiguracyjnego
         $this->viewData['module_css']       = ''; // Załączony CSS: nazwa_modulu.css
         $this->viewData['module_js']        = ''; // Załączony JS: nazwa_modulu.js
         $this->viewData['module_path']      = ''; // Ścieżka do modułu
+        $this->viewData['assets_path']      = dirname(__FILE__, 3) . '/assets/'; // Ścieżka do assets
 
         // Load helpers //
         $this->load->helper('Functions');
+        $this->load->helper('url');
+        $this->load->config('ci_my_admin');
 
+        // Dev - tryb developerski (wyswietla dodatkowe info w szablonach). Prod - tryb produkcyjny
+        $this->env = 'dev';
+
+        // Set container variable
+        $this->_container = $this->config->item('ci_my_admin_template_dir_public') . "layout.php";
+        $this->_modules = $this->config->item('modules_locations');
+        log_message('debug', 'CI My Admin : MY_Controller class loaded');
+        /*
         // Załadowanie zmiennych konfiguracyjnych
         $this->load->config('module_config');
 
         // Załadowanie modelu //
         $this->load->model('MY_Model');
+        */
 
+//        $this->load->model('MY_Model');
     }
 
     /**
@@ -56,6 +78,7 @@ class MY_Controller extends MX_Controller
         $exception = false
     ): bool {
 
+        $this->load->model('MY_Model');
         $this->load->library('Logs', null, 'logs');
 
         // Tabela z logami

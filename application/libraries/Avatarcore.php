@@ -376,7 +376,6 @@ class Avatarcore
             }
         }
         $css .= '</style>';
-//echo $css; die('***sssssssssssssss');
         return $css;
     }
 

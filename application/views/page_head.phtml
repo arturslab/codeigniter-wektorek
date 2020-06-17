@@ -5,10 +5,130 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $meta_title; ?></title>
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
 <style type="text/css">
+	html {
+		font-size: 18px;
+	}
+
+	body {
+		font-family: 'Lato', sans-serif;
+		background-color: #ccff42;
+		color: #333;
+	}
+
+	/* Customize grid */
+
+	h1 {
+		font-size: 3em;
+		margin-bottom: 0;
+		font-family: 'Bangers', cursive;
+		color: #353535;
+		letter-spacing: .03em;
+	}
+
+	.page-header {
+		margin-top: 1rem;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+	}
+	.page-header img {
+		height: 120px;
+	}
+
+
+	/* COLORS */
+
+	.bg_orange {background-color: #FF9800;}
+
+	.border_orange {border-color: #FF5722;}
+
+	.text-green {
+		color: #009100;
+	}
+
+	.text-highlight {
+		color:#FFC107;
+	}
+
+	.btn-lime {
+		background-color: #ccff42;
+		border-color: #ccff42;
+		color: #333;
+	}
+	.btn-lime:hover {
+		background-color: #bbe83f;
+		border-color: #a6ce38;
+	}
+
+	/* ALERTS */
+	.alert-custom {
+		border: solid 1px #FF5722;
+		background: #FF9800;
+	}
+	.alert-custom.alert-custom-inverse{
+		border: solid 1px #FF9800;
+		background: #FF5722;
+	}
+
+	.alert-custom .alert-link,
+	.alert-custom .alert-link:hover {
+		color: #fff;
+	}
+
+	.alert {
+		display: flex;
+		align-items: center;
+	}
+	.alert .glyphicon{
+		height: 60px;
+		margin-right: 10px;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+
+
+	/* CARDS */
+	.card{
+		border: solid 5px transparent;
+		transition: .5s;
+		cursor:pointer;
+	}
+
+	.card.card-active,
+	.card:hover{
+		border: solid 5px #FF5722;
+
+		transform: scale(1.05);
+		z-index: 2;
+		box-shadow: 2px 2px 2px #000;
+	}
+
+	.card.bg-lime.card-active,
+	.card.bg-lime:hover{
+		border: solid 5px #009100;
+	}
+
+	.card .step_number {
+		position: absolute;
+		font-weight: 700;
+		font-size: 2em;
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+
+
+	/* LOGIN */
 	.login-form {
 		width: 340px;
     	margin: 50px auto;
@@ -30,6 +150,43 @@
         font-size: 15px;
         font-weight: bold;
     }
+
+	.bg-dark {
+		background-color: #353535 !important;
+	}
+
+	.bg-lime {
+		background-color: #9ade00 !important;
+	}
+
+	.text-title {
+		font-family: 'Bangers', cursive;
+		letter-spacing: .03em;
+	}
+
+
+	@media screen and (min-width: 768px) {
+
+		.page-header img {
+			margin-right: 30px;
+		}
+
+		h1 {
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+	}
+
+	@media screen and (min-width: 1366px) {
+
+		h1 {
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+	}
 </style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/js/jquery-3.5.1.min.js"><\/script>')</script>
 </head>
 <body class="theme-default">
