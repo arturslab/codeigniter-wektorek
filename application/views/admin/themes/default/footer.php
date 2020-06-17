@@ -4,7 +4,7 @@
 <footer class="sticky-footer bg-white">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
-			<span>Copyright &copy; Your Website 2019</span>
+			<span>Copyright &copy; Wektorek.pl 2020</span>
 		</div>
 	</div>
 </footer>
@@ -36,6 +36,36 @@
 </div>
 
 
+<div id="theme-switch" class="themes">
+	<div class="colors">
+		<h3>Motyw</h3>
+		<ul class="theme-colors">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<h3>Kolor wyróżnienia</h3>
+		<ul class="accent-colors">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<p class="themes-btn"><i class="fas fa-cog fa-2x fa-spin"></i></p>
+</div>
+
 <!-- Bootstrap core JavaScript-->
 <script src="<?php echo base_url(); ?>assets/admin/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin/js/bootstrap.bundle.min.js"></script>
@@ -45,6 +75,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?php echo base_url(); ?>assets/admin/js/sb-admin-2.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/common.js"></script>
 
 <!-- Page level plugins -->
 <script src="<?php echo base_url(); ?>assets/admin/js/Chart.min.js"></script>

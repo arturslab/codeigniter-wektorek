@@ -29,17 +29,17 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Użytkownicy
+        Serwis
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Zarządzanie</span>
+			<i class="fas fa-user"></i>
+            <span>Użytkownicy</span>
         </a>
         <div id="collapseZero" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+            <div class="bg-gray-600 py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Działania:</h6>
                 <a class="collapse-item" href="<?php echo base_url('admin/users/test_page'); ?>">Test page</a>
                 <a class="collapse-item" href="<?php echo base_url('admin/users'); ?>">Lista</a>
@@ -50,9 +50,11 @@
 
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <!--
+	<div class="sidebar-heading">
         Serwis
     </div>
+	-->
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
@@ -61,7 +63,7 @@
             <span>Ustawienia</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+            <div class="bg-gray-600 py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Działania:</h6>
                 <a class="collapse-item" href="<?php echo base_url('admin/settings'); ?>">Lista</a>
             </div>
@@ -75,7 +77,7 @@
             <span>Utilities</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+            <div class="bg-gray-600 py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
                 <a class="collapse-item" href="utilities-color.html">Colors</a>
                 <a class="collapse-item" href="utilities-border.html">Borders</a>
@@ -90,17 +92,17 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Addons
+        Blog
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <span>Strony</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+            <div class="bg-gray-600 py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
                 <a class="collapse-item" href="login.html">Login</a>
                 <a class="collapse-item" href="register.html">Register</a>
@@ -116,8 +118,8 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+			<i class="fas fa-camera"></i>
+            <span>Galerie zdjęć</span></a>
     </li>
 
     <!-- Nav Item - Tables -->

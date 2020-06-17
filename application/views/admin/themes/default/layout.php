@@ -17,13 +17,11 @@
 		<!-- Main Content -->
 		<div id="content">
 
+            <?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'topbar'); ?>
 
 			<!-- Begin Page Content -->
 			<div class="container-fluid">
-                <?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'topbar'); ?>
-
                 <?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'content'); ?>
-
 			</div>
 			<!-- /.container-fluid -->
 

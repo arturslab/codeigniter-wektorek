@@ -7,12 +7,12 @@
 			<img class="img-fluid" src="<?php echo base_url(); ?>assets/admin/images/avatar_panel.svg" alt="">
 		</div>
 		<div class="col-md-4 ">
-			<div class="login-panel card border border-dark">
+			<div class="login-panel card text-white bg-dark border-dark shadow">
 				<div class="card-body">
 					<h3 class="card-title">Zaloguj się</h3>
 
                     <?php if ($this->session->flashdata('message')): ?>
-						<div class="alert alert-danger fade in">
+						<div class="alert bg-gradient-danger animated--fade-in">
 							<a href="#" class="close" data-dismiss="alert">&times;</a> <?php echo $this->session->flashdata('message'); ?>
 						</div>
                     <?php endif; ?>
@@ -24,10 +24,11 @@
 							<div class="form-group">
 								<input class="form-control" placeholder="Hasło" name="password" type="password" value="">
 							</div>
-							<div class="checkbox"><label> <input name="remember" type="checkbox" value="Remember Me">
-									Zapamiętaj mnie </label></div>
-							<!-- Change this to a button or input when using this as a form -->
-							<button class="btn btn-lg btn-dark text-white btn-block" type="submit">Login</button>
+							<div class="checkbox">
+								<label> <input name="remember" type="checkbox" value="Remember Me"> Zapamiętaj mnie
+								</label>
+							</div>
+							<button class="btn btn-lg btn-primary text-white btn-block" type="submit">Login</button>
 						</fieldset>
 					</form>
 				</div>
@@ -37,10 +38,22 @@
 </div>
 
 <style>
+	body {
+		background-color: #6e707e;
+	}
+	.card {
+		border-width: 3px;
+
+		transition-property: font-size;
+		transition-duration: 4s;
+		transition-delay: 2s;
+	}
+
 	.col-image {
 		text-align: center;
 	}
-	.col-image img{
+
+	.col-image img {
 		max-width: 120px;
 	}
 
@@ -48,7 +61,8 @@
 		.col-image {
 			text-align: right;
 		}
-		.col-image img{
+
+		.col-image img {
 			max-width: 100%;
 		}
 	}
