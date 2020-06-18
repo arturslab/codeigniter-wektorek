@@ -4,6 +4,7 @@
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
+/node_modules/
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
@@ -18,4 +19,7 @@ application/logs/*
 
 #PhpStorm
 .idea
+
+#For security reasons
 /env.php
+/gulp_config.js

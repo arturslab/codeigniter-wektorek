@@ -1,0 +1,18 @@
+/*
+	IMPORTANT!
+	This is an sample configuration file for Gulp tasks.
+	Set your FTP access data and rename this file to gulp_config.js.
+	REMEMBER to not share your access data
+*/
+
+/* FTP access data */
+var ftpData = {
+	"host": "domain.tld",
+	"user": "user@domain.tld",
+	"pass": "password",
+	'remotePath': "/public_html"
+};
+
+module.exports = {
+	ftp: ftpData
+};
