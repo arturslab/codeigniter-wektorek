@@ -13,7 +13,7 @@ class Crossword extends MY_Controller
     public function __construct ()
     {
         parent::__construct();
-
+        show_404(); // TODO: Artur modul nie dziala - pokaz blad 404
 	    // Load default module model
 	    $this->load->model(__CLASS__ . 'Model');
 

@@ -95,7 +95,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="col col-2">
 			<h1>404 Strony nie znaleziono</h1>
 			<p>
-				Nie znalazłem strony, której szukasz. <br><a href="">Wróć na stronę główną.</a>
+				Nie znalazłem strony, której szukasz. <br><a href="<?php echo base_url(); ?>">Wróć na stronę główną.</a>
 			</p>
 		</div>
 	</div>
