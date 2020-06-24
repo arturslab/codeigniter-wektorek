@@ -1,13 +1,9 @@
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 <!--<script src="/assets/js/popper.min.js"></script>-->
 <!--<script src="/assets/js/bootstrap.min.js"></script>-->
-<?php echo isset($module_js) && $module_js !='' ? '<script src="/assets/js/' . $module_js . '">' : ''; ?>
-<style>
-	.tooltip > .tooltip-inner {background-color: #f00 !important;}
-	.tooltip > .tooltip-arrow { border-bottom-color:#f00 !important; }
-</style>
-<footer>
-	FOOTER
+<?php echo isset($module_js) && $module_js !='' ? '<script src="/assets/js/' . $module_js . '"></script>' : ''; ?>
+<footer class="section-footer p-2 text-muted text-center text-small">
+	&copy; Copyright <?php echo date("Y"); ?>, wektorek.pl
 </footer>
 </body>
 </html>

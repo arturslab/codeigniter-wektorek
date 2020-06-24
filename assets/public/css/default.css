@@ -38,6 +38,10 @@ h1 {
   height: 120px;
 }
 
+.section-footer {
+  background-color: #353535;
+}
+
 .text-title {
   font-family: 'Bangers', cursive;
   letter-spacing: .03em;
