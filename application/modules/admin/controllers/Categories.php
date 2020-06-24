@@ -6,6 +6,9 @@ class Categories extends Admin_Controller
     {
         parent::__construct();
         $this->load->model(['admin/category']);
+
+        $this->view_data['module_path'] = '/application/modules/admin';
+        $this->view_data['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/admin/';
     }
 
     public function index()

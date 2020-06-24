@@ -5,16 +5,43 @@
   $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
+
     if ($(".sidebar").hasClass("toggled")) {
+
       $('.sidebar .collapse').collapse('hide');
-    };
+
+      // Create a cookie that expires 10 days from now, valid across the entire site:
+      Cookies.set('sidebar_open', 0, { expires: 10 });
+
+    }
+    else {
+      // Create a cookie that expires 10 days from now, valid across the entire site:
+      Cookies.set('sidebar_open', 1, { expires: 10 });
+    }
+
+    $.ajax({
+      method: 'POST',
+      url: module_url+'toggle_sidebar/',
+      data: {
+        sidebar_open: 1,
+      },
+    })
+    .done(function (data) {
+      console.log(data)
+    })
+    .always(function() {
+      console.log('ustawiam cookie sidebar...');
+
+    });
+
+    console.log('Cookie for sidebar: '+Cookies.get('sidebar_open'));
   });
 
   // Close any open menu accordions when window is resized below 768px
   $(window).resize(function() {
     if ($(window).width() < 768) {
       $('.sidebar .collapse').collapse('hide');
-    };
+    }
   });
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over

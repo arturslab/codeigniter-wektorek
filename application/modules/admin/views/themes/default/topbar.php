@@ -1,8 +1,8 @@
 <?php if(isset($env)) { show_filename($env, __FILE__); } ?>
 
-<?php //print_r($view_data['user']); ?>
+<?php //var_dump($user); ?>
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="section-navbar-top navbar navbar-expand topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -12,7 +12,7 @@
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" class="form-control border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
                     <i class="fas fa-search fa-sm"></i>
@@ -33,7 +33,7 @@
             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                     <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
                                 <i class="fas fa-search fa-sm"></i>
@@ -154,12 +154,18 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $view_data['user']->username; ?></span>
-                <img class="img-profile rounded-circle" src="http://wektorek.pl/assets/admin/images/logo_admin.svg">
+                <span class="mr-2 d-none d-lg-inline small"><?php echo $user->username; ?></span>
+                <?php if(isset($_SESSION['gravatar'])) { ?>
+					<img class="img-profile rounded-circle"  src="//www.gravatar.com/avatar/<?php echo $_SESSION['gravatar']; ?>?s=200" />
+                <?php }
+                else { ?>
+					<img class="img-profile rounded-circle" src="http://wektorek.pl/assets/admin/images/logo_admin.svg">
+                <?php } ?>
+
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?php echo base_url('admin/users/edit/' . $view_data['user']->id); ?>">
+                <a class="dropdown-item" href="<?php echo base_url('admin/users/edit/' . $user->id); ?>">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profil
                 </a>

@@ -40,5 +40,18 @@ if (!function_exists('show_filename')) {
     }
 }
 
+if (!function_exists('date_time')) {
+
+    function date_time($datetime)
+    {
+        $_datetime = new DateTime($datetime);
+        $date = $_datetime->format('Y-m-d');
+        $time = $_datetime->format('H:i');
+
+        return ['date' => $date, 'time' => $time];
+    }
+}
+
+
 /* End of file */
 /* Location: ./application/helpers/functions_helper.php */

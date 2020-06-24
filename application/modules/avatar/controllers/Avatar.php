@@ -21,10 +21,6 @@ class Avatar extends MY_Controller
     {
         parent::__construct();
 
-        // Load default module model
-//        $this->load->model(__CLASS__ . 'Model');
-
-
         $this->logsAttr = [
             'module' => $this->config->item('module_name'),
             'class'  => __CLASS__,
@@ -35,7 +31,7 @@ class Avatar extends MY_Controller
             'background' => ['min' => 1, 'max' => 1],
             'head'       => ['min' => 1, 'max' => 1],
             'mouth'      => ['min' => 1, 'max' => 1],
-            'hair'       => ['min' => 1, 'max' => 14],
+            'hair'       => ['min' => 1, 'max' => 20],
             'eye'        => ['min' => 1, 'max' => 6],
             'nose'       => ['min' => 1, 'max' => 1],
             'beard'      => ['min' => 1, 'max' => 4],
@@ -201,16 +197,16 @@ class Avatar extends MY_Controller
         $this->defaultPageUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name') . '/';
 
         // Default view data
-        $this->viewData['meta_title']       = 'Stwórz własnego awatara';
-        $this->viewData['meta_description'] = '';
-        $this->viewData['meta_keywords']    = '';
-	    $this->viewData['title'] = 'Wyczaruj swojego awatarka';
-	    $this->viewData['custom_colors'] = $this->colors_palette;
-        $this->viewData['module_css']  = $this->config->item('module_name') . '.css';
-        $this->viewData['module_js']   = $this->config->item('module_name') . '.js';
-        $this->viewData['module_name'] = $this->config->item('module_name');
-        $this->viewData['module_path'] = '/application/modules/' . $this->config->item('module_name');
-        $this->viewData['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/avatar/';
+        $this->view_data['meta_title']       = 'Stwórz własnego awatara';
+        $this->view_data['meta_description'] = '';
+        $this->view_data['meta_keywords']    = '';
+	    $this->view_data['title'] = 'Wyczaruj swojego awatarka';
+	    $this->view_data['custom_colors'] = $this->colors_palette;
+        $this->view_data['module_css']  = $this->config->item('module_name') . '.css';
+        $this->view_data['module_js']   = 'avatar.js';
+        $this->view_data['module_name'] = $this->config->item('module_name');
+        $this->view_data['module_path'] = '/application/modules/' . $this->config->item('module_name');
+        $this->view_data['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/avatar/';
     }
 
 
@@ -226,20 +222,20 @@ class Avatar extends MY_Controller
 
         //set_flash('message', 'danger', 'lorem ipsum...');
 
-        $this->viewData['svg_image_data'] = $this->avatarcore->showSvg();
+        $this->view_data['svg_image_data'] = $this->avatarcore->showSvg();
 
         // Odnotuj zdarzenie
         //$this->addLog('logs', 'info', 'Crossword', 'Test Avatar', true);
 
-        $this->viewData['css_name'] = $this->config->item('module_name') . '.css';
-        $this->viewData['js_name']  = $this->config->item('module_name') . '.js';
-        $this->viewData['error']    = $this->session->get_userdata()['error'] ?? '';
-        //$this->viewData['title'] = 'Avatar';
-        //$this->viewData['form_action'] = '/admin_panel/login/verify';
+        $this->view_data['css_name'] = $this->config->item('module_name') . '.css';
+        $this->view_data['js_name']  = $this->config->item('module_name') . '.js';
+        $this->view_data['error']    = $this->session->get_userdata()['error'] ?? '';
+        //$this->view_data['title'] = 'Avatar';
+        //$this->view_data['form_action'] = '/admin_panel/login/verify';
 
-        $this->load->view('page_head.phtml', $this->viewData);
-        $this->load->view('avatar.phtml', $this->viewData);
-        $this->load->view('page_footer.phtml', $this->viewData);
+        $this->load->view('page_head.phtml', $this->view_data);
+        $this->load->view('avatar.phtml', $this->view_data);
+        $this->load->view('page_footer.phtml', $this->view_data);
         //$this->session->set_userdata('error', '');
 
 

@@ -16,19 +16,29 @@
 							<a href="#" class="close" data-dismiss="alert">&times;</a> <?php echo $this->session->flashdata('message'); ?>
 						</div>
                     <?php endif; ?>
-					<form role="form" method="POST" action="<?php echo base_url('auth/login'); ?>">
+					<div class="alert login-message bg-gradient-danger animated--fade-in hidden">
+					</div>
+
+					<?php echo form_open('auth/login', ['class'=>'login-form']); ?>
 						<fieldset>
+
 							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                <?php echo form_label('E-mail','email');?>
+								<div class="email_error"></div>
+                                <?php echo form_input(['type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'placeholder' => 'E-mail', 'autofocus' => true]); ?>
 							</div>
+
 							<div class="form-group">
-								<input class="form-control" placeholder="Hasło" name="password" type="password" value="">
+                                <?php echo form_label('Hasło','password');?>
+								<div class="password_error"></div>
+                                <?php echo form_input(['type' => 'password', 'name' => 'password', 'id' => 'password', 'class' => 'form-control', 'placeholder' => 'Hasło']); ?>
 							</div>
+
 							<div class="checkbox">
 								<label> <input name="remember" type="checkbox" value="Remember Me"> Zapamiętaj mnie
 								</label>
 							</div>
-							<button class="btn btn-lg btn-primary text-white btn-block" type="submit">Login</button>
+							<button class="btn btn-lg btn-primary text-white btn-block" type="submit">Zaloguj</button>
 						</fieldset>
 					</form>
 				</div>

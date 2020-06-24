@@ -14,9 +14,6 @@ class Dashboard extends Admin_Controller
         }
         // Set container variable
         $this->_container = $this->config->item('ci_my_admin_template_dir_admin') . "layout.php";
-//        $this->_container = $this->config->item('ci_my_admin_template_dir_public') . "layout.php";
-//        $this->_modules = $this->config->item('modules_locations');
-//        log_message('debug', 'CI My Admin : MY_Controller class loaded');
 
     }
 
@@ -29,24 +26,16 @@ class Dashboard extends Admin_Controller
             redirect('admin/dashboard');
         }
 
+        $this->view_data['module_path'] = '/application/modules/admin';
+        $this->view_data['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/admin/';
     }
-
-    /*
-    function __construct()
-    {
-        parent::__construct();
-        $this->load->model(['admin/brand']);
-
-    }
-    */
 
     public function index()
     {
-        $data['page']  = $this->config->item('ci_my_admin_template_dir_admin') . "dashboard";
-        $data['env'] = $this->env;
-        $data['view_data'] = $this->view_data;
 
-        $this->load->view($this->_container, $data);
+        $this->view_data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "dashboard";
+
+        $this->load->view($this->_container, $this->view_data);
     }
 
     /*

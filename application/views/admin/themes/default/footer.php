@@ -1,7 +1,7 @@
 <?php if(isset($env)) { show_filename($env, __FILE__); } ?>
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<footer class="section-footer sticky-footer">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
 			<span>Copyright &copy; Wektorek.pl 2020</span>
@@ -35,36 +35,7 @@
 	</div>
 </div>
 
-
-<div id="theme-switch" class="themes">
-	<div class="colors">
-		<h3>Motyw</h3>
-		<ul class="theme-colors">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-		<h3>Kolor wyróżnienia</h3>
-		<ul class="accent-colors">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	<p class="themes-btn"><i class="fas fa-cog fa-2x fa-spin"></i></p>
-</div>
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'theme_switch'); ?>
 
 <!-- Bootstrap core JavaScript-->
 <script src="<?php echo base_url(); ?>assets/admin/js/jquery.min.js"></script>
@@ -74,7 +45,8 @@
 <script src="<?php echo base_url(); ?>assets/admin/js/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="<?php echo base_url(); ?>assets/admin/js/sb-admin-2.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/js.cookie.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/sb-admin-2.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin/js/common.js"></script>
 
 <!-- Page level plugins -->
@@ -90,7 +62,31 @@
 
 	// Call the dataTables jQuery plugin
 	$(document).ready(function() {
-		$('#dataTable').DataTable({ responsive: true });
+		$('#dataTable').DataTable({
+			responsive: true,
+			"language": {
+				"processing":     "Przetwarzanie...",
+				"search":         "Szukaj:",
+				"lengthMenu":     "Pokaż _MENU_ pozycji",
+				"info":           "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+				"infoEmpty":      "Pozycji 0 z 0 dostępnych",
+				"infoFiltered":   "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+				"infoPostFix":    "",
+				"loadingRecords": "Wczytywanie...",
+				"zeroRecords":    "Nie znaleziono pasujących pozycji",
+				"emptyTable":     "Brak danych",
+				"paginate": {
+					"first":      "Pierwsza",
+					"previous":   "Poprzednia",
+					"next":       "Następna",
+					"last":       "Ostatnia"
+				},
+				"aria": {
+					"sortAscending": ": aktywuj, by posortować kolumnę rosnąco",
+					"sortDescending": ": aktywuj, by posortować kolumnę malejąco"
+				}
+			}
+		});
 	});
 
 </script>

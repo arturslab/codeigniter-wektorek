@@ -3,11 +3,13 @@
 } ?>
 
 <!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Ustawienia serwisu</h1>
-    <a href="<?php echo base_url('admin/settings/create'); ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-download fa-sm text-white-50"></i> Dodaj nowy rekord </a>
+<div class="section-page-heading d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0">Ustawienia serwisu</h1>
 </div>
+
+<?php if(isset($module_description) && !empty($module_description)) { ?>
+    <?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'module_description', $module_description); ?>
+<?php } ?>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -17,9 +19,9 @@
         <div class="table-responsive">
             <?php if(isset($settings)) { ?>
                 <table class="table table-bordered table-striped table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
-                    <thead class="thead-dark">
+                    <thead class="thead">
                     <tr>
-                        <th>id</th>
+                        <th>ID</th>
                         <th>Nazwa</th>
                         <th>Tytuł</th>
                         <th>Opis</th>
@@ -28,9 +30,9 @@
                         <th>Akcja</th>
                     </tr>
                     </thead>
-                    <tfoot>
+                    <tfoot class="tfoot">
                     <tr>
-                        <th>id</th>
+                        <th>ID</th>
                         <th>Nazwa</th>
                         <th>Tytuł</th>
                         <th>Opis</th>
@@ -53,7 +55,6 @@
 							<td>
 								<div class="btn-group" role="group" aria-label="Basic example">
 									<a class="btn btn-dark" href="<?php echo base_url('admin/settings/edit/' . $v['id']); ?>" title="Edytuj"><i class="fas fa-edit"></i></a>
-									<a class="btn btn-danger" href="<?php echo base_url('admin/settings/edit/' . $v['id']); ?>" title="Usuń"><i class="fas fa-trash"></i></a>
 								</div>
 							</td>
                         </tr>

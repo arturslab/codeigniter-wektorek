@@ -150,7 +150,8 @@ class Tools extends MY_Controller
                         'is_active' => [
                             'type' => 'INT', 
                             'constraint' => 1, 
-                            'default' => 1
+                            'default' => 1,
+                            'comment' => '1=Active | 0=Inactive'
                         ],
                         'name' => [
                             'type' => 'VARCHAR',
@@ -167,11 +168,13 @@ class Tools extends MY_Controller
                         ],
                         'created_from_ip' => [
                             'type' => 'VARCHAR', 
-                            'constraint' => 100
+                            'constraint' => 100,
+                            'comment' => 'Log user IP on create record'
                         ],
                         'updated_from_ip' => [
                             'type' => 'VARCHAR', 
-                            'constraint' => 100
+                            'constraint' => 100,
+                            'comment' => 'Log user IP on update record'
                         ],
                         'created_at DATETIME DEFAULT current_timestamp',
                         'updated_at DATETIME DEFAULT current_timestamp on update current_timestamp',

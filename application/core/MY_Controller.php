@@ -12,7 +12,7 @@ class MY_Controller extends MX_Controller
     public $logsAttr;
 
     /** @var array $viewData */
-    public $viewData;
+    public $view_data;
 
     /** @var array $pageMetaSection */
     public $pageMetaSection;
@@ -33,15 +33,15 @@ class MY_Controller extends MX_Controller
         parent::__construct();
 
 
-        $this->viewData['meta_title']       = 'Wektorek.pl';
-        $this->viewData['meta_description'] = '';
-        $this->viewData['meta_keywords']    = '';
-        $this->viewData['title']            = 'Wektorek.pl';
-        $this->viewData['module_name']      = ''; // Nazwa modulu z pliku konfiguracyjnego
-        $this->viewData['module_css']       = ''; // Załączony CSS: nazwa_modulu.css
-        $this->viewData['module_js']        = ''; // Załączony JS: nazwa_modulu.js
-        $this->viewData['module_path']      = ''; // Ścieżka do modułu
-        $this->viewData['assets_path']      = dirname(__FILE__, 3) . '/assets/'; // Ścieżka do assets
+        $this->view_data['meta_title']       = 'Wektorek.pl';
+        $this->view_data['meta_description'] = '';
+        $this->view_data['meta_keywords']    = '';
+        $this->view_data['title']            = 'Wektorek.pl';
+        $this->view_data['module_name']      = ''; // Nazwa modulu z pliku konfiguracyjnego
+        $this->view_data['module_css']       = ''; // Załączony CSS: nazwa_modulu.css
+        $this->view_data['module_js']        = ''; // Załączony JS: nazwa_modulu.js
+        $this->view_data['module_path']      = ''; // Ścieżka do modułu
+        $this->view_data['assets_path']      = dirname(__FILE__, 3) . '/assets/'; // Ścieżka do assets
 
         // Load helpers //
         $this->load->helper('Functions');

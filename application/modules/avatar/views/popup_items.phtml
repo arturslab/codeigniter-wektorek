@@ -2,7 +2,7 @@
 	<!-- <?php echo '#' . $item_id; ?>_palette -->
     <?php if (isset($item_id) && ! empty($item_id)) { ?>
 
-		<div id="<?php echo $item_id; ?>_palette" class="custom_popup bg_orange border_orange palette-wrapper hidden">
+		<div id="<?php echo $item_id; ?>_palette" class="custom_popup bg-orange border_orange palette-wrapper hidden">
 
 			<!--
 		<div id="close_<?php echo $item_id; ?>_palette" class="popup_close">
@@ -27,11 +27,11 @@
 					<img class="glyphicon" src="/assets/images/mascot_alert_info_opt.svg" alt="Information icon">
 					<div>
 					<?php if ($popup_element_allow_uncheck) { ?>
-						<div><?php printf($popup_element_uncheck_legend, '<img src="/assets/images/btn_none_opt.svg" width="32" class="bg_orange" alt="">'); ?></div>
+						<div><?php printf($popup_element_uncheck_legend, '<img src="/assets/images/btn_none_opt.svg" width="32" class="bg-orange" alt="">'); ?></div>
 					<? }?>
 
 					<?php if ($popup_element_allow_random && $popup_element_random_legend) { ?>
-						<div><?php printf($popup_element_random_legend, '<img src="/assets/images/btn_random_opt.svg" width="32" class="bg_orange" alt="">'); ?></div>
+						<div><?php printf($popup_element_random_legend, '<img src="/assets/images/btn_random_opt.svg" width="32" class="bg-orange" alt="">'); ?></div>
 					<? }?>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 
 			<div class="palette-container palette-container-elements">
                 <?php if (isset($popup_element_allow_uncheck) && $popup_element_allow_uncheck) { ?>
-					<div class="item custom_bg_transparent item_radio_element_uncheck">
+					<div class="item custom_bg_transparent item_radio_element_uncheck" title="<?php printf($popup_element_uncheck_legend, 'tutaj'); ?>">
 						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_999" name="radio_<?php echo $item_id; ?>" value="none"/>
 						<label for="palette_<?php echo $item_id; ?>_item_999" class="item-label">
 							<svg id="svg8" version="1.1" viewBox="0 0 63.464 52.209" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@
                 <?php } ?>
 
                 <?php if (isset($popup_element_allow_random) && $popup_element_allow_random) { ?>
-					<div class="item custom_bg_transparent item_radio_element_random">
+					<div class="item custom_bg_transparent item_radio_element_random" title="<?php printf($popup_element_random_legend, 'tutaj'); ?>">
 						<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_0" name="radio_<?php echo $item_id; ?>" value="random" checked/>
 						<label for="palette_<?php echo $item_id; ?>_item_0" class="item-label">
 							<svg id="svg8" version="1.1" viewBox="0 0 63.464 52.209" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@
                         }
                         ?>
 
-						<div class="item custom_bg_transparent">
+						<div class="item custom_bg_transparent" title="Wybierz ten element">
 							<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_<?php echo $i; ?>" name="radio_<?php echo $item_id; ?>" value="<?php echo $i; ?>" <?php echo $checked; ?>/>
 
 							<svg id="svg<?php echo $item_id; ?>_<?php echo $i; ?>" width="73.582" height="59.785" version="1.1" viewBox="0 0 19.469 15.818" xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +115,7 @@
 					<div class="alert alert-custom alert-custom-inverse m-4" role="alert">
 						<img class="glyphicon" src="/assets/images/mascot_alert_info_opt.svg" alt="Information icon">
 						<div>
-							Kliknij <img src="/assets/images/btn_random_opt.svg" width="32" class="bg_orange rounded_AAA mx-auto_AAA" alt=""> aby wybrać losowy kolor.
+							Kliknij <img src="/assets/images/btn_random_opt.svg" width="32" class="bg-orange rounded_AAA mx-auto_AAA" alt=""> aby wybrać losowy kolor.
 						</div>
 					</div>
                 <? }?>
@@ -124,7 +124,7 @@
 				<div class="palette-container palette-container-colors">
 
                     <?php if (isset($popup_color_allow_random) && $popup_color_allow_random) { ?>
-						<div class="item bg_orange item_radio_color_random">
+						<div class="item bg-orange item_radio_color_random">
 
 							<input type="radio" class="palette-custom-radio" id="palette_<?php echo $item_id; ?>_item_0_color" name="radio_<?php echo $item_id; ?>_color" value="random" checked/>
 
@@ -178,7 +178,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-4 col-xl-2 offset-md-4 offset-xl-5">
-						<a class="btn btn-lg btn-block btn-warning mb-3 js-close" data-close="<?php echo $item_id; ?>_palette" data-target="<?php echo $item_id; ?>_card">OK,
+						<a class="btn btn-lg btn-block btn-custom mb-3 js-close" data-close="<?php echo $item_id; ?>_palette" data-target="<?php echo $item_id; ?>_card">OK,
 							wybrałem</a>
 					</div>
 				</div>

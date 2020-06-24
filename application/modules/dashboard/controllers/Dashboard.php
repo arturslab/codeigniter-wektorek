@@ -26,10 +26,10 @@ class Dashboard extends MY_Controller
 		$this->defaultPageUrl =  'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name');
 
 	    // Default view data
-	    $this->viewData['meta_title'] = '';
-	    $this->viewData['meta_description'] = '';
-	    $this->viewData['meta_keywords'] = '';
-	    $this->viewData['title'] = '';
+	    $this->view_data['meta_title'] = '';
+	    $this->view_data['meta_description'] = '';
+	    $this->view_data['meta_keywords'] = '';
+	    $this->view_data['title'] = '';
 	}
 	
 
@@ -50,14 +50,14 @@ class Dashboard extends MY_Controller
 		// Odnotuj zdarzenie
 		$this->addLog('logs', 'info', 'Dashboard', 'Test Dashboard', true);
 
-		$this->viewData['css_name'] = $this->config->item('module_name') . '.css';
-		$this->viewData['js_name'] = $this->config->item('module_name') . '.js';
-		$this->viewData['error'] = $this->session->get_userdata()['error'] ?? '';
-		$this->viewData['title'] = 'Wektorek.pl';
-		$this->viewData['form_action'] = '/admin_panel/login/verify';
+		$this->view_data['css_name'] = $this->config->item('module_name') . '.css';
+		$this->view_data['js_name'] = $this->config->item('module_name') . '.js';
+		$this->view_data['error'] = $this->session->get_userdata()['error'] ?? '';
+		$this->view_data['title'] = 'Wektorek.pl';
+		$this->view_data['form_action'] = '/admin_panel/login/verify';
 		
-		$this->load->view('page_head.phtml', $this->viewData);
-		$this->load->view('dashboard.phtml', $this->viewData);
+		$this->load->view('page_head.phtml', $this->view_data);
+		$this->load->view('dashboard.phtml', $this->view_data);
 		$this->load->view('page_footer.phtml');
 		$this->session->set_userdata('error', '');
 

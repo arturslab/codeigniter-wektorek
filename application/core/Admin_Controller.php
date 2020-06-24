@@ -49,6 +49,11 @@ class Admin_Controller extends MX_Controller
         $this->view_data['website_name'] = '';
         // TODO: Artur dane konfiguracyjne pobierać z bazy
         $this->view_data['config'] = [];
+        $this->view_data['module_path'] = null;
+        $this->view_data['module_url']  = null;
+        $this->view_data['module_description']  = '';
+        $this->view_data['env'] = $this->env;
+        $this->view_data['error'] = null;
 
         // Set container variable
         $this->_container = $this->config->item('ci_my_admin_template_dir_admin') . "layout.php";
@@ -61,9 +66,17 @@ class Admin_Controller extends MX_Controller
         $user                 = $this->ion_auth->user()->row();
         $this->logged_in_name = $user->first_name;
 
+        $this->load->helper('cookie');
+        $this->view_data['cookies']['sidebar_open'] = (int) $this->input->cookie('sidebar_open');
+
         $this->view_data['user'] = $user;
 
         log_message('debug', 'CI My Admin : Admin_Controller class loaded');
+    }
+
+    public function toggle_sidebar()
+    {
+        echo 'cookie aaa';
     }
 
 
