@@ -132,7 +132,11 @@ if(isset($custom_colors)) {
                         <?php
                         // Popupy z kaflami
                         foreach ($data as $d) {
-                            $this->load->view('card_items.phtml', $d);
+                            //$this->load->view('card_items.phtml', $d);
+
+                            $this->load->view($this->config->item('ci_my_admin_template_dir_public')
+                                              . 'includes/card_items', $d);
+
                         }
                         ?>
 
@@ -180,7 +184,9 @@ if(isset($custom_colors)) {
     <?php
     // Popupy z formularzami
     foreach ($data as $d) {
-        $this->load->view('popup_items.phtml', $d);
+//        $this->load->view('popup_items.phtml', $d);
+        $this->load->view($this->config->item('ci_my_admin_template_dir_public')
+                          . 'includes/popup_items', $d);
     }
     ?>
 
