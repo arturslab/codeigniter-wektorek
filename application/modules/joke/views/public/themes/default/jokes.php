@@ -1,15 +1,12 @@
 <!-- Custom styles for this template-->
 <!--<link href="--><?php //echo base_url(); ?><!--assets/public/css/avatar.min.css" rel="stylesheet">-->
 <style>
-	body {background: linear-gradient(45deg, #fd5800, #fe8300);}
-
-	.theme-blue {
-		/*background-color: #fe8300;*/
-
-
-		background-image: url(/assets/images/texture_1.png);
-		background-repeat: repeat;
+	body.page-humor-list {
+		/*background: #fe8300;*/
+		/*background: linear-gradient(45deg, #fd5800, #fe8300);*/
+		/*background: url("/assets/images/texture_1.png") 20px 50% repeat, linear-gradient(#fd5800, #fe8300);*/
 	}
+
 
 	.section-jokes .buttons .btn {
 		font-size: 2em;

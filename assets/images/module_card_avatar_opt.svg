@@ -1,13 +1,13 @@
 <svg id="svg8" version="1.1" viewBox="0 0 228.6 261.41" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs id="defs2">
   <linearGradient id="linearGradient1464">
-   <stop id="stop1460" style="stop-color:#2ad4ff" offset="0"/>
-   <stop id="stop1462" style="stop-color:#2ad4ff;stop-opacity:0" offset="1"/>
+   <stop id="stop14604856" style="stop-color:#2ad4ff" offset="0"/>
+   <stop id="stop1468752" style="stop-color:#2ad4ff;stop-opacity:0" offset="1"/>
   </linearGradient>
   <linearGradient id="linearGradient1575" x1="232.4" x2="232.4" y1="580.47" y2="619.54" gradientTransform="matrix(.29487 0 0 .29487 106.84 424.73)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1464"/>
   <linearGradient id="linearGradient1577" x1="232.4" x2="232.4" y1="580.47" y2="619.54" gradientTransform="matrix(.29487 0 0 .29487 -261.46 424.73)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1464"/>
  </defs>
- <g id="layer1" transform="translate(-61.837 -47.611)">
+ <g id="layer256" transform="translate(-61.837 -47.611)">
   <g id="g5616" transform="translate(966.71 6.728)">
    <rect id="rect5404" x="-904.87" y="40.883" width="228.6" height="261.41" style="opacity:0;paint-order:fill markers stroke;stroke-width:1.2325"/>
    <g id="g5038" transform="translate(133.45)">

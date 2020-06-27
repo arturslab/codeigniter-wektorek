@@ -141,7 +141,7 @@ if(isset($custom_colors)) {
                         ?>
 
 						<div class="col mb-3">
-							<div id="finish_card" class="card h-100 bg-dark">
+							<div id="finish_card" class="card h-100 bg-dark card-fx">
 								<span class="step_number text-title">Krok 5</span>
 								<img class="card-img-top p-3" src="/assets/images/choose_avatar.svg" alt="Choose avatar">
 								<div class="card-body d-flex flex-column">

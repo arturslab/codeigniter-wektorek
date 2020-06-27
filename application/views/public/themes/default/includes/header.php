@@ -13,12 +13,12 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
-	<link href="<?php echo base_url(); ?>assets/public/css/default.min.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/public/css/default.min.css?3" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/js/jquery-3.5.1.min.js"><\/script>')</script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 
-	<!-- generics -->
+	<!-- Generics -->
 	<link rel="icon" href="/favicons/favicon-32.png" sizes="32x32">
 	<link rel="icon" href="/favicons/favicon-57.png" sizes="57x57">
 	<link rel="icon" href="/favicons/favicon-76.png" sizes="76x76">
@@ -28,7 +28,7 @@
 	<link rel="icon" href="/favicons/favicon-228.png" sizes="228x228">
 
 	<!-- Android -->
-	<link rel="shortcut icon" sizes="196x196" href=“/favicons/favicon-196.png">
+	<link rel="shortcut icon" sizes="196x196" href="/favicons/favicon-196.png">
 
 	<!-- iOS -->
 	<link rel="apple-touch-icon" href="/favicons/favicon-120.png" sizes="120x120">
@@ -39,7 +39,7 @@
 	<meta name="msapplication-TileColor" content="#FD7F11">
 	<meta name="msapplication-TileImage" content="/favicons/favicon-144.png">
 
-	<!— Windows 8.1 + IE11 and above —>
-	<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+	<!-- Windows 8.1 + IE11 and above -->
+	<meta name="msapplication-config" content="/favicons/browserconfig.xml">
 </head>
 <body class="preload page-<?php echo isset($page_slug) ? $page_slug : ''; ?>">

@@ -1,3 +1,3 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['module_name'] = 'dashboard';
+$config['module_name'] = 'welcome';

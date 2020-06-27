@@ -1,11 +1,11 @@
 <svg id="svg8" version="1.1" viewBox="0 0 228.6 261.41" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs id="defs2">
-  <linearGradient id="linearGradient2384" x1="232.4" x2="232.4" y1="580.47" y2="619.54" gradientTransform="matrix(.1313 0 0 .1313 -81.964 115.77)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1464"/>
-  <linearGradient id="linearGradient1464">
-   <stop id="stop1460" style="stop-color:#2ad4ff" offset="0"/>
-   <stop id="stop1462" style="stop-color:#2ad4ff;stop-opacity:0" offset="1"/>
+ <defs id="defs256585">
+  <linearGradient id="linearGradient2384" x1="232.4" x2="232.4" y1="580.47" y2="619.54" gradientTransform="matrix(.1313 0 0 .1313 -81.964 115.77)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient204"/>
+  <linearGradient id="linearGradient204">
+   <stop id="stop145420" style="stop-color:#2ad4ff" offset="0"/>
+   <stop id="stop14462" style="stop-color:#2ad4ff;stop-opacity:0" offset="1"/>
   </linearGradient>
-  <linearGradient id="linearGradient2386" x1="232.4" x2="232.4" y1="580.47" y2="619.54" gradientTransform="matrix(.1313 0 0 .1313 13.115 115.77)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1464"/>
+  <linearGradient id="linearGradient2386" x1="232.4" x2="232.4" y1="580.47" y2="619.54" gradientTransform="matrix(.1313 0 0 .1313 13.115 115.77)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient204"/>
  </defs>
  <g id="layer1" transform="translate(-61.837 -47.611)">
   <g id="g5505" transform="translate(1346.7 6.728)">
@@ -65,6 +65,13 @@
      </g>
     </g>
     <g id="svg-card-crossword-penguin">
+     <animateTransform
+                       attributeName="transform"
+                       attributeType="XML"
+                       type="translate"
+                       dur="5s"
+                       values="0,0;-20,0;0,0"
+                       repeatCount="indefinite"/>
      <g id="g2352" transform="matrix(1.5583 -.34626 .34626 1.5583 -558.54 -227.36)">
       <path id="path2334" d="m-443.2 171.34a15.351 4.7642 51.531 0 1 8.8362 8.2538 15.351 4.7642 51.531 0 1 5.8198 14.983 15.351 4.7642 51.531 0 1-13.28-9.0553 15.351 4.7642 51.531 0 1-5.2591-8.4067l1.3942 0.54105z" style="fill:#353942;paint-order:fill markers stroke"/>
       <g id="g2348" transform="matrix(.22151 .15077 -.15077 .22151 -380.25 157.98)">
@@ -94,13 +101,7 @@
      </g>
      <path id="path2380" d="m-1153.2 189.06s-1.8377 6.4322 0.7657 16.081c0 0-23.585-23.891 3.8287-48.701 0 0 1.6847-3.2161-7.6573 4.5944 0 0 4.9007-8.7294 13.936-10.567 0 0-4.5943-0.30632-9.1887 1.9909 0 0 11.792-12.405 30.17-2.2972 0 0 8.8826-5.207 20.828 2.7567 0 0-9.6483-2.4504-11.486-0.61263 0 0 11.18-0.30631 19.143 13.63 0 0-4.1348-4.4413-5.6664-4.4413 0 0 5.3603 5.8196 6.126 10.414 0 0-3.063-5.0539-5.9727-5.9727 0 0 10.108 11.945-0.4596 35.53 0 0 0.7657-6.4322-0.6126-8.4231 0 0-1.2251 7.351-5.5133 12.864 0 0 4.7476-16.846 2.9099-21.747 0 0-1.3783 6.5853-6.126 12.099 0 0 4.2883-12.252 3.063-14.243 0 0-1.2252 5.3602-5.5133 8.8826 0 0 3.8287-6.7385 3.3693-10.567 0 0-2.7567 6.8916-3.8287 8.1168 0 0 1.8377-6.279 1.6847-9.342 0 0-1.991 8.7294-11.333 11.486 0 0 8.4231-10.261 8.5763-16.846 0 0-4.5945 10.567-10.72 13.018 0 0 5.6664-8.27 5.9727-12.864 0 0-3.9819 7.3511-10.261 10.567 0 0 5.9726-7.5042 5.3602-11.946 0 0-2.4503 7.3511-9.6483 10.873 0 0 2.6034-2.4503 3.5224-9.342 0 0-8.8826 7.1979-9.9547 14.243 0 0-1.072-4.7475 2.144-13.171 0 0-8.423 11.946-7.6573 18.837 0 0-2.6034-11.333 1.2253-18.99 0 0-6.5854 12.405-5.054 21.441 0 0-1.9909-4.5945-1.8377-10.567 0 0-1.6846 9.9546 0.6127 19.297 0 0-4.4414-8.4232-4.7477-16.081z" style="fill:#f60"/>
 
-     <animateTransform id="svg-card-crossword-penguin"
-                       attributeName="transform"
-                       attributeType="XML"
-                       type="translate"
-                       dur="5s"
-                       values="0,0;-20,0;0,0"
-                       repeatCount="indefinite"/>
+
 
 
 

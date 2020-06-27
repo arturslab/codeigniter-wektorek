@@ -52,6 +52,11 @@ h1 {
   letter-spacing: .03em;
 }
 
+/* FOOTER */
+.footer {
+  color: #7b7b7b;
+}
+
 /* COLORS */
 /* Custom colors */
 .custom_bg_0 {
@@ -302,19 +307,92 @@ h1 {
   background-color: #e0e0e0;
 }
 
-/*
-.form-control {
-	min-height: 38px;
-	border-radius: 2px;
+/* NAVIGATION */
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
-*/
+
+.nav ul li.item {
+  font-family: Bangers,cursive;
+  font-size: 1.2em;
+  /*line-height: 50px;*/
+  /*height: 50px;*/
+  border-bottom: none;
+  width: 50%;
+  /* Navigation custom colors */
+}
+
+.nav ul li.item a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  /*transition: .3s all;*/
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-delay: .1s;
+}
+
+.nav ul li.item a:hover {
+  background-color: #005f5f;
+}
+
+.nav ul li.item a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+.nav ul li.item.home a.active, .nav ul li.item.home a:hover {
+  background-color: #ccff42;
+  color: #444;
+}
+
+.nav ul li.item.avatar a.active, .nav ul li.item.avatar a:hover {
+  background-color: #fd5800;
+  color: #444;
+}
+
+.nav ul li.item.humor a.active, .nav ul li.item.humor a:hover {
+  background-color: #2196F3;
+  color: #444;
+}
+
+.nav ul li.item.crossword a.active, .nav ul li.item.crossword a:hover {
+  background-color: #ffc107;
+  color: #444;
+}
+
 /* PAGE THEMES */
+body.page-humor-list {
+  background: #5bb6ff;
+  background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #1590f3, #5bb6ff);
+}
+
+body.page-avatar {
+  background: #fe8300;
+  background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #fd5800, #fe8300);
+}
+
+body.page-welcome {
+  background: #ccff42;
+  background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #a1d80b, #ccff42);
+}
+
 .theme {
   background: #ffffff;
 }
 
 .theme-yellow {
-  background-color: #FFC107;
   color: #333;
 }
 
@@ -376,7 +454,6 @@ h1 {
 }
 
 .theme-green {
-  background-color: #ccff42;
   color: #333;
 }
 
@@ -407,6 +484,10 @@ h1 {
 }
 
 @media screen and (min-width: 768px) {
+  /* NAVIGATION */
+  .nav li.item {
+    flex: 1;
+  }
   .page-header img {
     margin-right: 30px;
   }

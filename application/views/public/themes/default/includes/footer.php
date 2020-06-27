@@ -1,17 +1,9 @@
 <?php if (isset($env)) {
     show_filename($env, __FILE__);
 } ?>
-<!-- jQuery -->
-<!--<script src="--><?//= base_url() ?><!--assets/admin/js/jquery.min.js"></script>-->
-<!-- Bootstrap Core JavaScript -->
-<!--<script src="--><?//= base_url() ?><!--assets/admin/js/bootstrap.min.js"></script>-->
-<!-- Metis Menu Plugin JavaScript -->
-<!--<script src="--><?//= base_url() ?><!--assets/admin/js/metisMenu.min.js"></script>-->
-<!-- Custom Theme JavaScript -->
-<!--<script src="--><?//= base_url() ?><!--assets/admin/js/sb-admin-2.js"></script>-->
-
-
-
+<footer class="footer bg-dark text-center pb-2 pt-2">
+	Copyright <?php echo date("Y"); ?> by wektorek.pl
+</footer>
 
 <script>
 	if ($(".login-form")[0]) {

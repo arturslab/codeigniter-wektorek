@@ -1,72 +1,8 @@
 <nav class="nav">
     <ul>
-        <li class="home"><a href="#">Home</a></li>
-        <li class="tutorials"><a class="active" href="#">Awatary</a></li>
-        <li class="about"><a href="#">Krzyżówka</a></li>
-        <li class="news"><a href="#">Dowcipy</a></li>
+        <li class="item home"><a class="<?php if(!$this->uri->segment(1)){echo 'active'; } ?>" href="<?php echo base_url(); ?>">Wektorek.pl</a></li>
+		<li class="item crossword"><a class="<?php if(in_array($this->uri->segment(1),['crossword'])){echo 'active';}?>" href="<?php echo base_url("crossword"); ?>">Krzyżówki</a></li>
+		<li class="item avatar"><a class="<?php if(in_array($this->uri->segment(1),['avatar'])){echo 'active'; } ?>" href="<?php echo base_url("avatar"); ?>">Awatary</a></li>
+        <li class="item humor"><a class="<?php if(in_array($this->uri->segment(1),['humor'])){echo 'active';}?>" href="<?php echo base_url("humor"); ?>">Humor</a></li>
     </ul>
 </nav>
-
-<style>
-    .nav ul {
-        list-style: none;
-        background-color: #444;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
-    .nav li {
-        font-family: 'Oswald', sans-serif;
-        font-size: 1.2em;
-        line-height: 40px;
-        height: 40px;
-        border-bottom: 1px solid #888;
-    }
-
-    .nav a {
-        text-decoration: none;
-        color: #fff;
-        display: block;
-        transition: .3s background-color;
-    }
-
-    .nav a:hover {
-        background-color: #005f5f;
-    }
-
-    .nav a.active {
-        background-color: #fff;
-        color: #444;
-        cursor: default;
-    }
-
-    @media screen and (min-width: 600px) {
-        .nav li {
-            width: 120px;
-            border-bottom: none;
-            height: 50px;
-            line-height: 50px;
-            font-size: 1.4em;
-        }
-
-        /* Option 1 - Display Inline */
-        .nav li {
-            display: inline-block;
-            margin-right: -4px;
-        }
-
-        /* Options 2 - Float
-        .nav li {
-          float: left;
-        }
-        .nav ul {
-          overflow: auto;
-          width: 600px;
-          margin: 0 auto;
-        }
-        .nav {
-          background-color: #444;
-        }
-        */
-    }
-</style>

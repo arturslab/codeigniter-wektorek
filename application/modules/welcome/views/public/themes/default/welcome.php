@@ -1,3 +1,4 @@
+<!--
 <style>
 
 	/* Card Crossword animations */
@@ -63,7 +64,7 @@
 		}
 	}
 </style>
-
+-->
 <div class="theme-green">
 	<div class="container">
 
@@ -79,8 +80,8 @@
 
 			<div class="row justify-content-center">
 
-				<div class="col-md-6 col-lg-4 mb-3">
-					<div class="card h-100 js-card-clickable" data-target="/crossword">
+				<div class="col-md-6 col-lg-3 mb-3">
+					<div class="card h-100 card-fx js-card-clickable" data-target="/crossword">
 						<span class="step_number text-title">Krzyżówki</span>
 
 						<div class="card-img-top p-3">
@@ -96,8 +97,8 @@
 				</div>
 
 
-				<div class="col-md-6 col-lg-4 mb-3">
-					<div class="card h-100 js-card-clickable" data-target="/avatar">
+				<div class="col-md-6 col-lg-3 mb-3">
+					<div class="card h-100 card-fx js-card-clickable" data-target="/avatar">
 						<span class="step_number text-title">Awatary</span>
 						<div class="card-img-top p-3">
                             <?php include($assets_path . 'images/module_card_avatar_opt.svg'); ?>
@@ -112,8 +113,8 @@
 				</div>
 
 
-				<div class="col-md-6 col-lg-4 mb-3">
-					<div class="card h-100 js-card-clickable" data-target="/humor">
+				<div class="col-md-6 col-lg-3 mb-3">
+					<div class="card h-100 card-fx js-card-clickable" data-target="/humor">
 						<span class="step_number text-title">Humor</span>
 						<div class="card-img-top p-3">
 							<img class="card-img-top p-3" src="/assets/images/module_card_joke.svg" alt="Jokes">

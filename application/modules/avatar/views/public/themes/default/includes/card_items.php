@@ -1,7 +1,7 @@
 <?php if (isset($item_active) && $item_active) { ?>
 	<div class="col mb-3">
 		<!-- <?php echo '.' . $item_id; ?>_card -->
-		<div id="<?php echo $item_id; ?>_card" class="card h-100 bg-dark js-card-clickable"
+		<div id="<?php echo $item_id; ?>_card" class="card h-100 bg-dark card-fx js-card-clickable"
 				data-target="<?php echo $item_id; ?>_palette">
 			<span class="step_number text-title">Krok <?php echo $item_nr; ?></span>
 			<img class="card-img-top p-3" src="/assets/images/choose_<?php echo $item_id; ?>.svg" alt="Choose hair">
