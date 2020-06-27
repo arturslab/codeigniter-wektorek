@@ -2,6 +2,9 @@
 tr.text-danger td {
 	text-decoration: line-through;
 }
+.table {
+	font-size: .8rem;
+}
 
 /* THEMES */
 .themes *{
@@ -148,4 +151,9 @@ tr.text-danger td {
 .badge.badge-users-redactor {
 	color: #fff;
 	background-color: #8BC34A;
+}
+
+/* FORMS */
+.form_error {
+	color: #F44336;
 }

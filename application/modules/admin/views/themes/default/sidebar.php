@@ -36,12 +36,12 @@ $sidear_open_class = isset($cookies['sidebar_open']) && $cookies['sidebar_open']
 	</div>
 
 	<!-- Nav Item - Pages Collapse Menu -->
-	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+	<li class="nav-item <?php if(in_array($this->uri->segment(2),['jokes'])){echo 'active';}?>">
+		<a class="nav-link <?php if(!in_array($this->uri->segment(2),['jokes'])){echo 'collapsed';}?>" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
 			<i class="fas fa-file-alt"></i>
 			<span>Strony</span>
 		</a>
-		<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+		<div id="collapsePages" class="collapse <?php if(in_array($this->uri->segment(2),['jokes'])){echo 'show';}?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 			<div class="py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Widok logowania:</h6>
 				<a class="collapse-item" href="login.html">Logowanie</a>
@@ -51,9 +51,25 @@ $sidear_open_class = isset($cookies['sidebar_open']) && $cookies['sidebar_open']
 				<h6 class="collapse-header">Inne strony:</h6>
 				<a class="collapse-item" href="404.html">Strona błędu 404</a>
 				<a class="collapse-item" href="blank.html">Pusta strona</a>
+				<a class="collapse-item <?php if($this->uri->segment(2)=="jokes"){echo 'active';}?>" href="<?php echo base_url('admin/jokes'); ?>">Dowcipy</a>
 			</div>
 		</div>
 	</li>
+
+	<!-- Nav Item - Categories Collapse Menu -->
+	<li class="nav-item <?php if(in_array($this->uri->segment(2),['categories'])){echo 'active';}?>">
+		<a class="nav-link <?php if(!in_array($this->uri->segment(2),['categories'])){echo 'collapsed';}?>" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="true" aria-controls="collapseCategories">
+			<i class="fas fa-file-alt"></i>
+			<span>Kategorie</span>
+		</a>
+		<div id="collapseCategories" class="collapse <?php if(in_array($this->uri->segment(2),['categories'])){echo 'show';}?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+			<div class="py-2 collapse-inner rounded">
+				<h6 class="collapse-header">Sekcje:</h6>
+				<a class="collapse-item <?php if($this->uri->segment(2)=="categories"){echo 'active';}?>" href="<?php echo base_url('admin/categories'); ?>">Kategorie</a>
+			</div>
+		</div>
+	</li>
+
 
 	<!-- Nav Item - Galleries Collapse Menu -->
 	<li class="nav-item">

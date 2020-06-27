@@ -9,6 +9,10 @@ echo isset($_SESSION['auth_message']) ? $_SESSION['auth_message'] : FALSE;
 	<h1 class="h3 mb-0">Rejestracja użytkownika</h1>
 </div>
 
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_description'); ?>
+
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_validation_error'); ?>
+
 <!-- Content Row -->
 <div class="row">
 

@@ -202,6 +202,7 @@ class Tools extends MY_Controller
     protected function make_seed_file(string $name)
     {
         $path = APPPATH . "database/seeds/$name.php";
+        $table_name = str_replace('seeder', '', strtolower($name));
 
         if(file_exists($path)) {
             die("Seed file already exist!");
@@ -209,27 +210,47 @@ class Tools extends MY_Controller
 
         $my_seed = fopen($path, "w") or die("Unable to create seed file!");
         $seed_template
-        = "<?php 
+            = "<?php 
         class $name extends Seeder 
         { 
-            private \$table = 'users';
+            private \$table = '{$table_name}';
              
             public function run() 
             { 
-                // initiate faker
-                \$this->faker = Faker\Factory::create();
             
                 \$this->db->truncate(\$this->table); 
                 
-                //seed records manually 
-                \$data = [ 
-                    'user_name' => 'admin', 
-                    'password' => '9871' 
-                ]; 
-                \$this->db->insert(\$this->table, \$data); 
+                // Seed records manually 
+                \$records = [
+                    [ 
+                        'name' => 'Name 1', 
+                        'title' => 'Title 1',
+                        'description' => 'Lorem ipsum 1',
+                        'created_from_ip' => '127.0.0.1',
+                    ],
+                    [ 
+                        'name' => 'Name 2', 
+                        'title' => 'Title 2',
+                        'description' => 'Lorem ipsum 2',
+                        'created_from_ip' => '127.0.0.1',
+                    ],
+                ];
                 
-                //seed many records using faker 
-                \$limit = 33; 
+                echo 'Seeding ' . count(\$records) . ' records for ' . \$this->table . ' table.';
+                
+                foreach (\$records as \$data) {
+                    if(isset(\$data['name']) && !empty(\$data['name'])) {
+                        echo \".\"; 
+                        \$this->db->insert(\$this->table, \$data);
+                    }
+                }
+                
+                
+                // Initiate faker
+                \$this->faker = Faker\Factory::create();
+                
+                // Seed many records using faker 
+                \$limit = 20; 
                 echo \"seeding \$limit user accounts\"; 
                 for (\$i = 0; \$i < \$limit; \$i++) { 
                     echo \".\"; 

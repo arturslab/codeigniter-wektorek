@@ -7,9 +7,9 @@
 	<h1 class="h3 mb-0">Dodaj plik</h1>
 </div>
 
-<?php if(isset($module_description) && !empty($module_description)) { ?>
-    <?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'module_description', $module_description); ?>
-<?php } ?>
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_description'); ?>
+
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_validation_error'); ?>
 
 <?php echo $error; ?>
 

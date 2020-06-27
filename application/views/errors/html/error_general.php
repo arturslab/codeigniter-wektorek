@@ -1,64 +1,116 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Error</title>
-<style type="text/css">
+defined('BASEPATH') or exit('No direct script access allowed');
+?>
+<style>
 
-::selection { background-color: #E13300; color: white; }
-::-moz-selection { background-color: #E13300; color: white; }
+	::selection { background-color: #E13300; color: white; }
 
-body {
-	background-color: #fff;
-	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	color: #4F5155;
-}
+	::-moz-selection { background-color: #E13300; color: white; }
 
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
-}
+	html {
+		min-height: 100%;
+	}
 
-h1 {
-	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
-}
+	body {
+		min-height: 100vh;
+		margin: 0;
+		padding: 0;
+		color: #333;
+		font-family: 'Lato', sans-serif;
 
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
-}
+		background: #009688;
+		background-image: url(/assets/images/texture_1.png); /* fallback */
+		background-image: url(/assets/images/texture_1.png), linear-gradient(45deg, #009688, #E91E63); /* W3C */
+	}
 
-#container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	box-shadow: 0 0 8px #D0D0D0;
-}
+	code {
+		font-family: Consolas, Monaco, Courier New, Courier, monospace;
+		font-size: 12px;
+		background-color: #f9f9f9;
+		border: 1px solid #D0D0D0;
+		color: #002166;
+		display: block;
+		margin: 14px 0 14px 0;
+		padding: 12px 10px 12px 10px;
+	}
 
-p {
-	margin: 12px 15px 12px 15px;
-}
+	.img-fluid {
+		width: 100%;
+		height: auto;
+	}
+
+	.container {
+		max-width: 1335px;
+		margin: 60px auto;
+	}
+
+	.grid-row {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+
+	.col {
+		padding: 10px;
+		box-sizing: border-box;
+		align-self: auto;
+	}
+
+	.col-1 {
+		flex-basis: 50%;
+	}
+
+	.col-2 {
+		flex-basis: 50%;
+		padding-left: 30px;
+	}
+
+	h1 {
+		font-size: 3em;
+		margin-bottom: 0;
+		font-family: 'Bangers', cursive;
+		color: #353535;
+		letter-spacing: .03em;
+	}
+
+	a {
+		color: #FFF;
+		font-weight: 700;
+	}
+
+	@media screen and (min-width: 768px) {
+		.col-1 {
+			flex-basis: 20%;
+			flex: 0 0 20%;
+			max-width: 20%;
+		}
+
+		.col-2 {
+			flex: 0 0 70%;
+			max-width: 70%;
+		}
+
+		h1 {
+			margin-bottom: 10px;
+		}
+	}
+
+	@media screen and (min-width: 1366px) {
+		h1 {
+			margin-bottom: 100px;
+		}
+	}
 </style>
-</head>
-<body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+<div id="container" class="container">
+	<div class="grid-row">
+		<div class="col col-1">
+			<img class="img-fluid" src="/assets/images/mascot_error_general_opt.svg" alt="Mascot - General error page">
+		</div>
+		<div class="col col-2">
+			<h1><?php echo $heading; ?></h1>
+			<div>
+                <?php echo $message; ?>
+			</div>
+		</div>
 	</div>
-</body>
-</html>
+</div>

@@ -9,6 +9,10 @@
 		<i class="fas fa-download fa-sm text-white-50"></i> Dodaj nowy rekord </a>
 </div>
 
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_description'); ?>
+
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_validation_error'); ?>
+
 <!-- Content Row -->
 <div class="row">
 

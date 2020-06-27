@@ -15,21 +15,6 @@ class Admin_Controller extends MX_Controller
     Do wyświetlania zmiennych pomocniczych dla developerow */
     var $env;
 
-    public function construct_OLD()
-    {
-        parent::__construct();
-
-        // Load helpers //
-        $this->load->helper('Functions');
-        $this->load->helper('url');
-        $this->load->config('ci_my_admin');
-
-        // Set container variable
-        $this->_container = $this->config->item('ci_my_admin_template_dir_public') . "layout.php";
-        $this->_modules = $this->config->item('modules_locations');
-        log_message('debug', 'CI My Admin : Admin_Controller class loaded');
-
-    }
 
     function __construct()
     {

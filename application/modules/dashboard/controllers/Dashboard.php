@@ -25,11 +25,6 @@ class Dashboard extends MY_Controller
 		// Domyslna strona do przekierowan
 		$this->defaultPageUrl =  'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name');
 
-	    // Default view data
-	    $this->view_data['meta_title'] = '';
-	    $this->view_data['meta_description'] = '';
-	    $this->view_data['meta_keywords'] = '';
-	    $this->view_data['title'] = '';
 	}
 	
 
@@ -39,80 +34,29 @@ class Dashboard extends MY_Controller
     public function index ()
     {
 
-		// Zalogowano
-        if (isset($this->session->get_userdata()['username'])) {
-            redirect("http://{$_SERVER['HTTP_HOST']}/panel/users");
-		}
-
-        //set_flash('message', 'danger', 'lorem ipsum...');
-
-
 		// Odnotuj zdarzenie
 		$this->addLog('logs', 'info', 'Dashboard', 'Test Dashboard', true);
 
-		$this->view_data['css_name'] = $this->config->item('module_name') . '.css';
-		$this->view_data['js_name'] = $this->config->item('module_name') . '.js';
-		$this->view_data['error'] = $this->session->get_userdata()['error'] ?? '';
-		$this->view_data['title'] = 'Wektorek.pl';
-		$this->view_data['form_action'] = '/admin_panel/login/verify';
-		
-		$this->load->view('page_head.phtml', $this->view_data);
-		$this->load->view('dashboard.phtml', $this->view_data);
-		$this->load->view('page_footer.phtml');
-		$this->session->set_userdata('error', '');
+        // Default view data
+        $this->view_data['meta_title']       = 'Wektorek.pl';
+        $this->view_data['meta_description'] = '';
+        $this->view_data['meta_keywords']    = '';
+        $this->view_data['title'] = 'Dashboard';
+        $this->view_data['module_css']  = $this->config->item('module_name') . '.css';
+        $this->view_data['module_js']   = $this->config->item('module_name') . '.js';
+        $this->view_data['module_name'] = $this->config->item('module_name');
+        $this->view_data['module_path'] = '/application/modules/' . $this->config->item('module_name');
+        $this->view_data['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->config->item('module_name') . '/';
+        $this->view_data['page']   = $this->config->item('ci_my_admin_template_dir_public') . "dashboard";
+        $this->view_data['module'] = $this->config->item('module_name');
+        $this->view_data['page_slug'] = 'dashboard';
 
-
-		
-		
-
-/*
-		if ($this->form_validation->run() == FALSE)
-		{
-			if ($this->input->get('logout')) {
-				$this->logout();
-			}
-
-			
-		}
-		else {
-			$this->login();
-		}
-		*/
-
-        
-	}
-
-	function verify()
-	{
+        $this->load->view($this->_container, $this->view_data);
 
 	}
 
-	function register() {
-		$this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
-		// Walidacja formularza
-		$this->form_validation->set_rules('login', 'Nazwa użytkownika', 'required|trim|is_unique[admins.login]');
-		$this->form_validation->set_rules('password', 'Hasło użytkownika', 'required');
-		if ($this->form_validation->run() == FALSE) {
-			$this->index();
-		}
-		else {
 
-			$verification_key = md5(rand());
-			$encrypted_password = $this->encrypt->encode($this->input->post('password'));
 
-			$data = [
-				'login' => $this->input->post('login'),
-				'password' => $encrypted_password,
-				'verification_key' => $verification_key,
-			];
-
-			$id = $this->LoginModel->register($data);
-			if($id > 0) {
-				die('zarejestrowano');
-			}
-		}
-	}
-	
 	function validation() {
 		
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
@@ -159,13 +103,5 @@ class Dashboard extends MY_Controller
         }
     }
 
-    /**
-     *  Logout from admin page
-     */
-    private function logout () : void
-    {
-        $this->session->sess_destroy();
-        redirect("{$this->defaultPageUrl}/login");
-	}
-	
+
 }

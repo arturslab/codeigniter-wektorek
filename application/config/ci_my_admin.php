@@ -4,6 +4,9 @@
 $config['ci_my_admin_template_dir'] = "";
 
 // sets the path to the public templates path. The public templates are used for the login window
+//$config['ci_my_admin_template_dir_auth'] = $config['ci_my_admin_template_dir'] . "auth/themes/default/";
+
+// sets the path to the public templates path. The public templates are used for the login window
 $config['ci_my_admin_template_dir_public'] = $config['ci_my_admin_template_dir'] . "public/themes/default/";
 
 // sets the path to the admin section templates

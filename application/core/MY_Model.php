@@ -33,7 +33,7 @@ class MY_Model extends CI_Model
         return $this->db->get_where($this->table_name, [$this->primary_key => $id])->row();
     }
 
-    public function get_all($fields = '', $where = [], $table = '', $limit = '', $order_by = '', $group_by = '', $only_active = true)
+    public function get_all($fields = '', $where = [], $table = '', $limit = '', $order_by = '', $group_by = '', $only_active = false)
     {
         $data = [];
         if ($fields != '') {
@@ -66,6 +66,23 @@ class MY_Model extends CI_Model
         $Q->free_result();
 
         return $data;
+    }
+
+    /**
+     * Return only active records (is_active flag = TRUE)
+     *
+     * @param string $fields
+     * @param array  $where
+     * @param string $table
+     * @param string $limit
+     * @param string $order_by
+     * @param string $group_by
+     *
+     * @return array
+     */
+    public function get_all_active($fields = '', $where = [], $table = '', $limit = '', $order_by = '', $group_by = '')
+    {
+        return $this->get_all($fields, $where, $table, $limit, $order_by, $group_by,true);
     }
 
 

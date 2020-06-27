@@ -18,7 +18,7 @@
 
 	<!-- Custom styles for this template-->
 	<link href="<?php echo base_url(); ?>assets/admin/css/sb-admin-2<?php echo $portal_theme; ?>.min.css" rel="stylesheet" id="theme-css">
-	<link href="<?php echo base_url(); ?>assets/admin/css/common.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/admin/css/common.min.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/admin/css/dev.css" rel="stylesheet">
 
 </head>

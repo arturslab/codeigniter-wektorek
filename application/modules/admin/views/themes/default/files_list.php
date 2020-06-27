@@ -9,9 +9,7 @@
 		<i class="fas fa-file text-white-50"></i> Dodaj nowy plik </a>
 </div>
 
-<?php if(isset($module_description) && !empty($module_description)) { ?>
-    <?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'module_description', $module_description); ?>
-<?php } ?>
+<?php $this->load->view($this->config->item('ci_my_admin_template_dir_admin') . 'includes/module_description'); ?>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">

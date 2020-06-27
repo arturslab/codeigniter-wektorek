@@ -112,6 +112,22 @@
 				</div>
 
 
+				<div class="col-md-6 col-lg-4 mb-3">
+					<div class="card h-100 js-card-clickable" data-target="/humor">
+						<span class="step_number text-title">Humor</span>
+						<div class="card-img-top p-3">
+							<img class="card-img-top p-3" src="/assets/images/module_card_joke.svg" alt="Jokes">
+						</div>
+						<!--					<img class="card-img-top p-3" src="/assets/images/module_card_avatar_opt.svg" alt="Choose avatar">-->
+						<div class="card-body d-flex flex-column">
+							<!--						<h5 class="card-title text-title mt-auto">Awatary</h5>-->
+							<p class="card-text mt-auto">Pośmiej się sam lub ze znajomymi!</p>
+							<a href="/humor" class="btn btn-custom btn-block mt-auto">Przejdź</a>
+						</div>
+					</div>
+				</div>
+
+
 			</div>
 
 		</div>

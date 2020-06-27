@@ -32,6 +32,18 @@ class MY_Controller extends MX_Controller
     {
         parent::__construct();
 
+        // Load helpers //
+        $this->load->helper('Functions');
+        $this->load->helper('url');
+        $this->load->config('ci_my_admin');
+
+        // Dev - tryb developerski (wyswietla dodatkowe info w szablonach). Prod - tryb produkcyjny
+        $this->env = 'prod';
+
+        // Set container variable
+        $this->_container = $this->config->item('ci_my_admin_template_dir_public') . "layout.php";
+        $this->_modules = $this->config->item('modules_locations');
+        log_message('debug', 'CI My Admin : MY_Controller class loaded');
 
         $this->view_data['meta_title']       = 'Wektorek.pl';
         $this->view_data['meta_description'] = '';
@@ -40,21 +52,16 @@ class MY_Controller extends MX_Controller
         $this->view_data['module_name']      = ''; // Nazwa modulu z pliku konfiguracyjnego
         $this->view_data['module_css']       = ''; // Załączony CSS: nazwa_modulu.css
         $this->view_data['module_js']        = ''; // Załączony JS: nazwa_modulu.js
-        $this->view_data['module_path']      = ''; // Ścieżka do modułu
+        // TODO: Artur dane konfiguracyjne pobierać z bazy
+        $this->view_data['config'] = [];
+        $this->view_data['module_path'] = null; // Ścieżka do modułu
+        $this->view_data['module_url']  = null;
+        $this->view_data['module_description']  = '';
         $this->view_data['assets_path']      = dirname(__FILE__, 3) . '/assets/'; // Ścieżka do assets
+        $this->view_data['env'] = $this->env;
+        $this->view_data['error'] = null;
+        $this->view_data['page_slug'] = null;
 
-        // Load helpers //
-        $this->load->helper('Functions');
-        $this->load->helper('url');
-        $this->load->config('ci_my_admin');
-
-        // Dev - tryb developerski (wyswietla dodatkowe info w szablonach). Prod - tryb produkcyjny
-        $this->env = 'dev';
-
-        // Set container variable
-        $this->_container = $this->config->item('ci_my_admin_template_dir_public') . "layout.php";
-        $this->_modules = $this->config->item('modules_locations');
-        log_message('debug', 'CI My Admin : MY_Controller class loaded');
         /*
         // Załadowanie zmiennych konfiguracyjnych
         $this->load->config('module_config');

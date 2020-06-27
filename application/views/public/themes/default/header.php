@@ -9,25 +9,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Wektorek.pl - Logowanie</title>
-	<!-- Bootstrap Core CSS -->
-<!--	<link href="--><?//= base_url() ?><!--assets/admin/css/bootstrap.min.css" rel="stylesheet">-->
-	<!-- MetisMenu CSS -->
-<!--	<link href="--><?//= base_url() ?><!--assets/admin/css/metisMenu.min.css" rel="stylesheet">-->
-	<!-- Custom CSS -->
-	<link href="<?php echo base_url(); ?>assets/admin/css/sb-admin-2.css" rel="stylesheet">
-	<!-- Custom Fonts -->
-	<link href="<?php echo base_url(); ?>assets/admin/css/fontawesome.min.css" rel="stylesheet" type="text/css">
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	<style>
-		.hidden {
-			display: none;
-		}
-	</style>
+	<title><?php echo $meta_title; ?> <?php echo isset($title) && !empty($title) ? ' - '.$title:'';?></title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+	<link href="<?php echo base_url(); ?>assets/public/css/default.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/js/jquery-3.5.1.min.js"><\/script>')</script>
+	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+
+	<!-- generics -->
+	<link rel="icon" href="/favicons/favicon-32.png" sizes="32x32">
+	<link rel="icon" href="/favicons/favicon-57.png" sizes="57x57">
+	<link rel="icon" href="/favicons/favicon-76.png" sizes="76x76">
+	<link rel="icon" href="/favicons/favicon-96.png" sizes="96x96">
+	<link rel="icon" href="/favicons/favicon-128.png" sizes="128x128">
+	<link rel="icon" href="/favicons/favicon-192.png" sizes="192x192">
+	<link rel="icon" href="/favicons/favicon-228.png" sizes="228x228">
+
+	<!-- Android -->
+	<link rel="shortcut icon" sizes="196x196" href=“/favicons/favicon-196.png">
+
+	<!-- iOS -->
+	<link rel="apple-touch-icon" href="/favicons/favicon-120.png" sizes="120x120">
+	<link rel="apple-touch-icon" href="path/to/favicon-152.png" sizes="152x152">
+	<link rel="apple-touch-icon" href="path/to/favicon-180.png" sizes="180x180">
+
+	<!-- Windows 8 IE 10-->
+	<meta name="msapplication-TileColor" content="#FD7F11">
+	<meta name="msapplication-TileImage" content="/favicons/favicon-144.png">
+
+	<!— Windows 8.1 + IE11 and above —>
+	<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
 </head>
-<body class="preload">
+<body class="preload page-<?php echo isset($page_slug) ? $page_slug : ''; ?>">
