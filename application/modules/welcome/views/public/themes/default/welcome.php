@@ -69,7 +69,7 @@
 	<div class="container">
 
 		<div class="page-header">
-			<img src="/assets/images/mascot_wizard_opt.svg" alt="">
+			<img src="/assets/images/logo.svg" alt="Webiste logo">
 			<h1 class="text-center"><?php echo $title; ?></h1>
 		</div>
         <?php echo validation_errors(); ?>
