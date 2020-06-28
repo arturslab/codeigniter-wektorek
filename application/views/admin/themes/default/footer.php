@@ -4,8 +4,9 @@
 <footer class="section-footer sticky-footer">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
-			<span>Copyright &copy; Wektorek.pl 2020</span>
+			<span>Copyright &copy; <?php echo date("Y"); ?> Wektorek.pl</span>
 		</div>
+		<div class="copyright text-center my-auto pt-2">Strona załadowana w <strong>{elapsed_time}</strong> sek. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter v.<strong>' . CI_VERSION . '</strong>' : '' ?></div>
 	</div>
 </footer>
 <!-- End of Footer -->

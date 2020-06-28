@@ -5,7 +5,7 @@
 <!-- Page Heading -->
 <div class="section-page-heading d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0">Grupy użytkowników</h1>
-    <a href="<?php echo base_url('admin/usergroups/create'); ?>" class="d-none d-sm-inline-block btn btn-sm shadow-sm btn-primary">
+    <a href="<?php echo base_url('admin/usergroups/create'); ?>" class="btn btn-sm shadow-sm btn-primary">
 		<i class="fas fa-user-plus text-white-50"></i> Dodaj grupę </a>
 </div>
 

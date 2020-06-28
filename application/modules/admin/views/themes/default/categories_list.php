@@ -5,7 +5,7 @@
 <!-- Page Heading -->
 <div class="section-page-heading d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0">Kategorie wpisów</h1>
-    <a href="<?php echo base_url('admin/categories/create'); ?>" class="d-none d-sm-inline-block btn btn-sm shadow-sm btn-primary">
+    <a href="<?php echo base_url('admin/categories/create'); ?>" class="btn btn-sm shadow-sm btn-primary">
         <i class="fas fa-file text-white-50"></i> Dodaj nową kategorię </a>
 </div>
 

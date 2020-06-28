@@ -2,7 +2,7 @@
     show_filename($env, __FILE__);
 } ?>
 <footer class="footer bg-dark text-center pb-2 pt-2">
-	Copyright <?php echo date("Y"); ?> by wektorek.pl
+	Copyright &copy; <?php echo date("Y"); ?> by wektorek.pl
 </footer>
 
 <script>
