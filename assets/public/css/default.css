@@ -321,7 +321,7 @@ h1 {
 }
 
 .nav ul li.item {
-  font-family: Bangers,cursive;
+  font-family: Bangers, cursive;
   font-size: 1.2em;
   /*line-height: 50px;*/
   /*height: 50px;*/
@@ -370,6 +370,98 @@ h1 {
 .nav ul li.item.crossword a.active, .nav ul li.item.crossword a:hover {
   background-color: #ffc107;
   color: #444;
+}
+
+/* SECTION JOKES */
+/* JOKES */
+.section-jokes {
+  /* Color themes */
+  /*
+	.cat-999 {
+		background-color: #2d2d2d;
+		color: #cacaca;
+	}
+	.cat-999 {
+		background-color: #364e59;
+		color: #92cae4;
+	}
+	*/
+}
+
+.section-jokes .buttons .btn {
+  font-size: 1em;
+  margin-bottom: 0;
+  font-family: Bangers, cursive;
+  letter-spacing: .03em;
+}
+
+.section-jokes .jokes .grid-sizer {
+  width: 100%;
+}
+
+.section-jokes .jokes .grid-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.section-jokes .jokes .grid-item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.section-jokes .jokes .grid-item .category {
+  font-size: .8rem;
+  text-align: left;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.section-jokes .jokes .grid-item .content {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.section-jokes .cat-3 {
+  background-color: #ffc60b;
+  color: #5a4605;
+}
+
+.section-jokes .cat-7 {
+  background-color: #d76cff;
+  color: #4e285d;
+}
+
+.section-jokes .cat-11 {
+  background-color: #ff4141;
+  color: #4c1414;
+}
+
+.section-jokes .cat-4 {
+  background-color: #56a1e5;
+  color: #1c354c;
+}
+
+.section-jokes .cat-5 {
+  background-color: #99c539;
+  color: #303e12;
+}
+
+.section-jokes .cat-12 {
+  background-color: #a8218e;
+  color: #21081c;
+}
+
+.section-jokes .cat-13 {
+  background-color: #faa61a;
+  color: #382506;
 }
 
 /* PAGE THEMES */
@@ -498,6 +590,14 @@ body.page-welcome {
   .section-login .col-image {
     text-align: right;
   }
+  /* JOKES */
+  .section-jokes .jokes .grid-sizer,
+  .section-jokes .jokes .grid-item {
+    width: 47%;
+  }
+  .section-jokes .buttons .btn {
+    font-size: 1.2em;
+  }
   .palette-container .item {
     flex-basis: 33.33%;
   }
@@ -526,6 +626,14 @@ body.page-welcome {
   h1 {
     margin-bottom: 1rem;
     margin-top: 1rem;
+  }
+  /* JOKES */
+  .section-jokes .jokes .grid-sizer,
+  .section-jokes .jokes .grid-item {
+    width: 30%;
+  }
+  .section-jokes .buttons .btn {
+    font-size: 2em;
   }
   .palette-container .item {
     flex-basis: 10.0%;

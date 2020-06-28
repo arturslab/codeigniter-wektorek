@@ -54,9 +54,10 @@ h1 {
 }
 
 /* FOOTER */
-.footer{
+.footer {
 	color: #7b7b7b;
 }
+
 /* COLORS */
 
 /* Custom colors */
@@ -354,32 +355,35 @@ h1 {
 		text-align: center;
 		padding: 0;
 		margin: 0;
-		width:100%;
+		width: 100%;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-evenly;
+
 		li.item {
-			font-family: Bangers,cursive;
+			font-family: Bangers, cursive;
 			font-size: 1.2em;
 			/*line-height: 50px;*/
 			/*height: 50px;*/
 			border-bottom: none;
-			width:50%;
+			width: 50%;
 
 			a {
 				text-decoration: none;
 				color: #fff;
 				display: block;
 				/*transition: .3s all;*/
-				padding-top:10px;
-				padding-bottom:10px;
+				padding-top: 10px;
+				padding-bottom: 10px;
 
 				transition-property: all;
 				transition-duration: .5s;
 				transition-delay: .1s;
+
 				&:hover {
 					background-color: #005f5f;
 				}
+
 				&.active {
 					background-color: #fff;
 					color: #444;
@@ -389,32 +393,35 @@ h1 {
 
 			/* Navigation custom colors */
 			&.home {
-				a{
-					&.active,&:hover {
+				a {
+					&.active, &:hover {
 						background-color: #ccff42;
 						color: #444;
 					}
 				}
 			}
+
 			&.avatar {
-				a{
-					&.active,&:hover {
+				a {
+					&.active, &:hover {
 						background-color: #fd5800;
 						color: #444;
 					}
 				}
 			}
+
 			&.humor {
-				a{
-					&.active,&:hover {
+				a {
+					&.active, &:hover {
 						background-color: #2196F3;
 						color: #444;
 					}
 				}
 			}
+
 			&.crossword {
-				a{
-					&.active,&:hover {
+				a {
+					&.active, &:hover {
 						background-color: #ffc107;
 						color: #444;
 					}
@@ -425,19 +432,118 @@ h1 {
 	}
 }
 
+/* SECTION JOKES */
+/* JOKES */
+.section-jokes {
+	.buttons {
+		.btn {
+			font-size: 1em;
+			margin-bottom: 0;
+			font-family: Bangers, cursive;
+			letter-spacing: .03em;
+		}
+	}
+
+	.jokes {
+		.grid-sizer {
+			width: 100%;
+		}
+
+		.grid-item {
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 1rem;
+			word-wrap: break-word;
+			background-clip: border-box;
+			border: 1px solid rgba(0, 0, 0, .125);
+			border-radius: .25rem;
+			width: 100%;
+
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+			&:hover {
+				box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+			}
+
+			.category {
+				font-size: .8rem;
+				text-align: left;
+				font-style: italic;
+				margin-bottom: 20px;
+			}
+
+			.content {
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 1.5;
+			}
+		}
+	}
+
+	/* Color themes */
+	.cat-3 {
+		background-color: #ffc60b;
+		color: #5a4605;
+	}
+
+	.cat-7 {
+		background-color: #d76cff;
+		color: #4e285d;
+	}
+
+	.cat-11 {
+		background-color: #ff4141;
+		color: #4c1414;
+	}
+
+	.cat-4 {
+		background-color: #56a1e5;
+		color: #1c354c;
+	}
+
+	.cat-5 {
+		background-color: #99c539;
+		color: #303e12;
+	}
+
+	.cat-12 {
+		background-color: #a8218e;
+		color: #21081c;
+	}
+
+	.cat-13 {
+		background-color: #faa61a;
+		color: #382506;
+	}
+
+	/*
+	.cat-999 {
+		background-color: #2d2d2d;
+		color: #cacaca;
+	}
+	.cat-999 {
+		background-color: #364e59;
+		color: #92cae4;
+	}
+	*/
+}
+
 /* PAGE THEMES */
 body {
 	&.page-humor-list {
 		background: #5bb6ff;
 		background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #1590f3, #5bb6ff);
 	}
+
 	&.page-avatar {
 		background: #fe8300;
 		background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #fd5800, #fe8300);
 	}
+
 	&.page-welcome {
 		background: #ccff42;
-		background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #a1d80b,#ccff42);
+		background: url("/assets/images/texture_1.png") 0 0 repeat, linear-gradient(45deg, #a1d80b, #ccff42);
 	}
 
 }
@@ -568,6 +674,22 @@ body {
 		}
 	}
 
+	/* JOKES */
+	.section-jokes {
+		.jokes {
+			.grid-sizer,
+			.grid-item {
+				width: 47%;
+			}
+		}
+
+		.buttons {
+			.btn {
+				font-size: 1.2em;
+			}
+		}
+	}
+
 	.palette-container {
 		.item {
 			flex-basis: 33.33%;
@@ -606,6 +728,22 @@ body {
 	h1 {
 		margin-bottom: 1rem;
 		margin-top: 1rem;
+	}
+
+	/* JOKES */
+	.section-jokes {
+		.jokes {
+			.grid-sizer,
+			.grid-item {
+				width: 30%;
+			}
+		}
+
+		.buttons {
+			.btn {
+				font-size: 2em;
+			}
+		}
 	}
 
 	.palette-container {
