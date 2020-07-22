@@ -96,6 +96,8 @@ $route['admin/products/edit/(:any)'] = 'admin/products/edit/$1';
 
 // Dowcipy
 $route['humor'] = 'joke/index';
+//$route['humor'] = 'joke/page/all/1';
+$route['humor/(:any)/(:num)'] = 'joke/page/$1/$2';
 
 // Testowe
 $route['brands'] = 'admin/brands/brands_list';

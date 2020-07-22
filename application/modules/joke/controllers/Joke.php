@@ -46,6 +46,11 @@ class Joke extends MY_Controller
 
     public function index()
     {
+//        $this->load->helper('url');
+        $this->load->library('pagination');
+
+
+
         $categories       = $this->category->get_all();
         $categories_names = [];
         foreach ($categories as $v) {
@@ -63,26 +68,25 @@ class Joke extends MY_Controller
             }
         }
 
-        //print_r($posts); die();
-        /*
-        $categories_names = [];
-        foreach($categories as $v) {
-            $categories_names[$v['id']] = $v['name'];
-        }
-        */
+
+        /* Pagination */
+        //$config['base_url'] = 'http://example.com/index.php/test/page/';
+        $config['base_url'] = site_url('humor/page/');
+        $config['total_rows'] = 200;
+        $config['per_page'] = 20;
+        $config['use_page_numbers'] = TRUE;
+        $this->pagination->initialize($config);
+        $this->view_data['pagination'] = $this->pagination->create_links();
+
+
+
         $this->view_data['module_description'] = '';
         $this->view_data['posts']              = $posts;
         $this->view_data['categories_names']   = $categories_names;
-//        print_r($allowed_categories);
-//        $this->view_data['categories'] = $categories;
-//        $this->view_data['categories_names'] = $categories_names;
-
-//        $this->load->view($this->_container, $this->view_data);
-
 
         $this->view_data['css_name'] = $this->config->item('module_name') . '.css';
         $this->view_data['js_name']  = $this->config->item('module_name') . '.js';
-        $this->view_data['error']    = $this->session->get_userdata()['error'] ?? '';
+        //$this->view_data['error']    = $this->session->get_userdata()['error'] ?? '';
 
         $this->view_data['page']      = $this->config->item('ci_my_admin_template_dir_public') . "jokes";
         $this->view_data['module']    = $this->config->item('module_name');
@@ -93,24 +97,29 @@ class Joke extends MY_Controller
 
     }
 
-
-    /**
-     * Zwraca adres URL do losowego pliku PNG
-     * Uwaga - musi być zapisany przynajmniej 1 plik PNG z zwatarem
-     */
-    public function get_random()
+    public function page($category_slug = false, $page = 1)
     {
-
-        $this->avatarpng->init();
-        $url = $this->avatarpng->getRandomPng();
-        if ($url) {
-            echo $url;
-        } else {
-            // TODO: Pokaż zaślepkę
-            echo 'default_avatar.png';
+        $cat_id = $this->top_category;
+        if(isset($category_slug) && $category_slug != 'all') {
+            $cat_id = $this->category->get_id_by_field($category_slug);
         }
 
+        $this->view_data['categories_names'] = $this->category->get_all_categories_selector($cat_id, true);
+
+        print_r($this->view_data['categories_names']);
+
+        echo $category_slug;
+
+        die($page);
     }
+
+
+    private function count_posts()
+    {
+
+    }
+
+
 
 
 }

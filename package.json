@@ -1,5 +1,5 @@
 {
-  "title": "SB Admin 2",
+  "title": "Wektorek",
   "name": "wektorek",
   "version": "1.0.0",
   "scripts": {
@@ -18,7 +18,7 @@
   ],
   "homepage": "https://wektorek.pl",
   "license": "MIT",
-  "author": "Bootstrap for Wektorek",
+  "author": "Wektorek",
   "contributors": [
     "David Miller (http://davidmiller.io/)"
   ],

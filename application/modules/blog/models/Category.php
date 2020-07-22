@@ -84,22 +84,21 @@ class Category extends MY_Model
      * This function gets all the active parent and child categories and returns an array ready for a select menu.
      * @return array
      */
-    public function get_all_categories_selector($parent_id = 0, $first_option = 'Wybierz...') {
+    public function get_all_categories_selector($parent_id = 0, $first_option = 'Wybierz...', $only_active = false) {
 
+        $where = $only_active ? ' AND is_active = true ' : '';
         $sql = "SELECT "
                ."* "
                ."FROM ".$this->db->dbprefix."categories "
                ."WHERE "
-               //."is_active = ? "
-               ."  parent_id = " . ( (int) $parent_id) . " "
+               ." parent_id = $parent_id "
+               .$where
                ."ORDER BY name";
 
-        $params = [
-            true,
-            0
-        ];
 
-        $query = $this->db->query($sql, $params);
+        $query = $this->db->query($sql);
+
+
 
         if ( $first_option != '' ) {
 
@@ -114,7 +113,7 @@ class Category extends MY_Model
 
             $this->select_array[ $row['id'] ] = $row['name'];
 
-            $this->get_all_child_categories_selector($row['id']);
+            $this->get_all_child_categories_selector($row['id'], $only_active);
 
         }
 
@@ -125,22 +124,34 @@ class Category extends MY_Model
      * This function gets all the active child categories and adds to the array.
      * @return void
      */
-    public function get_all_child_categories_selector($parent_id) {
+    public function get_all_child_categories_selector(int $parent_id, bool $only_active = false) {
 
+        $where = $only_active ? ' AND is_active = true ' : '';
         $sql = "SELECT "
                ."* "
                ."FROM ".$this->db->dbprefix."categories "
                ."WHERE "
-               ."is_active = ? "
-               ." AND parent_id = ? "
+               ." parent_id = $parent_id "
+               .$where
                ."ORDER BY name";
 
-        $params = array(
-            true,
+        /*
+        $params = [
+            $only_active,
             $parent_id
-        );
+        ];
+        */
+        //$query = $this->db->query($sql, $params);
+        $query = $this->db->query($sql);
 
-        $query = $this->db->query($sql, $params);
+        /*
+        $this->db->where(['parent_id' => $parent_id]);
+
+        if ($only_active) {
+            $this->db->where(['is_active' => 1]);
+        }
+        $query = $this->db->query($sql);
+*/
 
         foreach ($query->result_array() as $row) {
 
@@ -172,6 +183,12 @@ class Category extends MY_Model
         }
 
         return $categories;
+    }
+
+    // Zwraca ID kategorii po nazwie
+    public function get_category_by_slug(string $slug)
+    {
+
     }
 
 

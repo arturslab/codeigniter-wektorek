@@ -1,3 +1,10 @@
+// Import Custom Variables (Overrides Default Bootstrap Variables)
+@import "variables.scss";
+
+// Import Bootstrap
+@import "../../../vendor/bootstrap/scss/bootstrap.scss";
+
+// Custom styles
 $color-yellow: #FFC107;
 $color-yellow-dark: #FF5722;
 $color-green: #ccff42;
@@ -493,7 +500,7 @@ h1 {
 	}
 
 	.cat-11 {
-		background-color: #ff4141;
+		background-color: #ff6767;
 		color: #4c1414;
 	}
 

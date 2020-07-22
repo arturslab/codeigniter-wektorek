@@ -33,6 +33,15 @@ class MY_Model extends CI_Model
         return $this->db->get_where($this->table_name, [$this->primary_key => $id])->row();
     }
 
+    public function get_id_by_field(string $val, $field = 'slug')
+    {
+        // Check if field name is allowed
+        if(!in_array($field, ['slug', 'name'])) {
+            $field = 'slug';
+        }
+        return $this->db->get_where($this->table_name, [$field => $val])->row();
+    }
+
     public function get_all($fields = '', $where = [], $table = '', $limit = '', $order_by = '', $group_by = '', $only_active = false)
     {
         $data = [];

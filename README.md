@@ -21,7 +21,7 @@ CMS korzysta z biblioteki Faker do generowania fikcyjnych danych przydatnych do 
 
 ## GULP
 Kompilacja plików SCSS panelu admina oraz widoku dla gości.
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+Po zakończeniu instalacji uruchom `npm install`, a następnie `npm start` (uruchomienie serwisu w domyślnej przeglądarce, uruchomienie watchera na modyfikacje plików szablonów, live reload). W pliku `gulpfile.js` możesz zobaczyć zadania dostępne w środowisku deweloperskim.
 
 ### Zadania GULP
 Zadania GULP podzielone są ze względu na dostęp do zasobów. Osobne zadania dotyczą plików panelu administracyjnego, osobne zadania dotyczą plików dostępnych dla niezalogowanych użytkowników (gości serwisu). Dostępne są także zadania wspólne. Poniżej opis dostępnych zadań GULP:

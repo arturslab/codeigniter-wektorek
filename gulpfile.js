@@ -55,6 +55,15 @@ const banner = ['/*!\n',
 	'\n'
 ].join('');
 
+// Set the frontend banner content
+const bannerFrontend = ['/*!\n',
+	' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+	' * Copyright 2019-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+	' * Licensed under <%= pkg.license %> (https://github.com/melma/<%= pkg.name %>/blob/master/LICENSE)\n',
+	' */\n',
+	'\n'
+].join('');
+
 // BrowserSync
 function browserSync(done) {
 	browsersync.init({
@@ -151,7 +160,7 @@ function cssFrontend() {
 	.pipe(autoprefixer({
 		cascade: false
 	}))
-	.pipe(header(banner, {
+	.pipe(header(bannerFrontend, {
 		pkg: pkg
 	}))
 	.pipe(gulp.dest(destCssDirFrontend))

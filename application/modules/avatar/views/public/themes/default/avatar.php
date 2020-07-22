@@ -78,14 +78,7 @@ $data[4] = [
 	<?php
 if(isset($custom_colors)) {
 	foreach($custom_colors as $element => $list) {
-		foreach($list as $id => $v) {
-		?>
-	.custom_bg_<?php echo $element; ?>_<?php echo $id; ?> {background-color: <?php echo $v; ?>}
-
-	.custom_color_<?php echo $element; ?>_<?php echo $id; ?> {color: <?php echo $v; ?>}
-
-	<?php
-    }
+		foreach($list as $id => $v) { ?>.custom_bg_<?php echo $element; ?>_<?php echo $id; ?>{background-color: <?php echo $v; ?>} .custom_color_<?php echo $element; ?>_<?php echo $id; ?>{color: <?php echo $v; ?>}<?php }
 }
 }
 ?>

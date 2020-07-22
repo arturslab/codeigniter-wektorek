@@ -78,6 +78,11 @@
 
 		<div id="wrapper">
 
+			<div class="alert text-white bg-dark" role="alert">
+				<div>Cześć, jestem Wektorek, mały wesoły pingwinek.
+				</div>
+			</div>
+
 			<div class="row justify-content-center">
 
 				<div class="col-md-6 col-lg-3 mb-3">
@@ -91,7 +96,7 @@
 						<div class="card-body d-flex flex-column">
 							<!--						<h5 class="card-title text-title mt-auto">Krzyżówki</h5>-->
 							<p class="card-text mt-auto">Krzyżówki dla dzieci z podziałem na kategorie.</p>
-							<a href="/crossword" class="btn btn-custom btn-block mt-auto">Przejdź</a>
+							<a href="/crossword" class="btn btn-custom btn-block mt-auto">Zobacz</a>
 						</div>
 					</div>
 				</div>
@@ -107,7 +112,7 @@
 						<div class="card-body d-flex flex-column">
 							<!--						<h5 class="card-title text-title mt-auto">Awatary</h5>-->
 							<p class="card-text mt-auto">Pochwal się znajomym swoim awatarem!</p>
-							<a href="/avatar" class="btn btn-custom btn-block mt-auto">Przejdź</a>
+							<a href="/avatar" class="btn btn-custom btn-block mt-auto">Zobacz</a>
 						</div>
 					</div>
 				</div>
@@ -123,7 +128,7 @@
 						<div class="card-body d-flex flex-column">
 							<!--						<h5 class="card-title text-title mt-auto">Awatary</h5>-->
 							<p class="card-text mt-auto">Pośmiej się sam lub ze znajomymi!</p>
-							<a href="/humor" class="btn btn-custom btn-block mt-auto">Przejdź</a>
+							<a href="/humor" class="btn btn-custom btn-block mt-auto">Zobacz</a>
 						</div>
 					</div>
 				</div>
