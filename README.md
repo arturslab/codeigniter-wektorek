@@ -1,4 +1,6 @@
-# wektorek
+![CodeIgniter Wektorek](img/github_header_codeigniter_wektorek.png)
+
+# CodeIgniter Wektorek
 
 ## Opis skrócony
 CMS zbudowany w oparciu o framework CodeIgniter (w wersji 3.1.11). Posiada rozszerzenie HMVC (więcej na https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc/src/codeigniter-3.x/) zapewniającą lepszą organizację struktury plików, dzieląc je na moduły.
