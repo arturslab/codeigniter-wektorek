@@ -1,0 +1,4 @@
+<?php if (isset($message) && !empty($message)) {?>
+	<div class="alert alert-<?php echo isset($message['class'])?$message['class']:''; ?>"><?php echo isset($message['message'])?$message['message']:''; ?></div>
+<?php } ?>
+<?php echo display_flash('message'); ?>

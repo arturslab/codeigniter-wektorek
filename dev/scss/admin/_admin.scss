@@ -1,0 +1,98 @@
+
+/* SECTION SIDEBAR */
+.section-sidebar {
+	&.navbar-nav {
+		background-color: $sidebar-background;
+
+		.sidebar-brand {
+			background-color: $accent-color;
+			color: #fff;
+		}
+
+		.nav-item {
+
+			.nav-link {
+				color: $sidebar-background-item-color;
+			}
+
+			&.active {
+				.nav-link {
+					background-color: $sidebar-background-item-hover;
+					color: $sidebar-background-item-hover-color;
+				}
+			}
+
+			.nav-link {
+
+				&:hover {
+					background-color: $sidebar-background-item-hover;
+					color: $sidebar-background-item-hover-color;
+				}
+			}
+
+			.collapse {
+				.collapse-inner {
+					background-color: darken($sidebar-background, 10%);
+				}
+			}
+
+		}
+	}
+}
+#sidebarToggle {
+	background-color: darken($sidebar-background, 10%);
+}
+
+/* SECTION NAVBAR TOP */
+.section-navbar-top {
+	background-color: $sidebar-background-item-hover;
+	color: $sidebar-background-item-hover-color;
+}
+
+
+
+
+/* SECTION PAGE HEADING */
+.section-page-heading {}
+
+/* SECTION MODULE DESCRIPTION */
+.section-module-description {}
+
+/* SECTION FOOTER */
+.section-footer {}
+
+/* CARDS */
+.card {
+	.card-header {
+		background-color: $accent-color;
+		color: #fff;
+	}
+}
+
+/* MODALS */
+.modal {
+	.modal-header {
+		background-color: $accent-color;
+		color: #fff;
+	}
+}
+
+/* BUTTONS */
+
+/* DATATABLES */
+
+.thead>tr>th,
+.tfoot>tr>th
+{
+	background-color: lighten($accent-color, 20%);
+	color: #fff;
+}
+
+/* OTHER */
+
+.themes {
+	color: #ffffff;
+	.themes-btn {
+		background-color: #fff;
+	}
+}

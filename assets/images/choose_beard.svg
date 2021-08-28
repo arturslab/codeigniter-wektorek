@@ -1,0 +1,21 @@
+<svg id="svg8" width="490" height="580" version="1.1" viewBox="0 0 129.64 153.45" xmlns="http://www.w3.org/2000/svg">
+ <rect id="rect37" y="-2.8422e-14" width="129.64" height="153.45" style="opacity:0;paint-order:fill markers stroke;stroke-width:.26528"/>
+ <g id="layer1-3" transform="matrix(1.2483 0 0 1.2483 -132.47 -83.824)">
+  <g id="g932" transform="translate(547.63,-247.62)">
+   <path id="path791" d="m-391.85 321.64c-20.157 0-36.384 16.227-36.384 36.384v18.411c-0.45564-0.11441-0.91792-0.17349-1.3815-0.17615-4.2731-2.2e-4 -7.7372 4.681-7.7372 10.456 4.4e-4 5.7741 3.4645 10.455 7.7372 10.454 1.0228-2e-3 2.035-0.28026 2.9779-0.81535 4.5575 14.888 18.368 25.658 34.788 25.658h4.5296c16.42 0 30.232-10.77 34.789-25.658 0.94226 0.53469 1.9536 0.81179 2.9755 0.81535 4.2729 2.7e-4 7.737-4.6802 7.7374-10.454 0-5.7746-3.4641-10.456-7.7374-10.456-0.4625 2e-3 -0.92411 0.0617-1.3791 0.17615v-18.411c0-20.157-16.229-36.384-36.386-36.384z" style="fill:#ffc8b2;paint-order:fill markers stroke"/>
+   <ellipse id="ellipse793" cx="-402.13" cy="374.38" rx="4.8095" ry="9.828" style="fill:#333;paint-order:fill markers stroke"/>
+   <ellipse id="ellipse795" cx="-377.04" cy="374.38" rx="4.8095" ry="9.828" style="fill:#333;paint-order:fill markers stroke"/>
+   <rect id="rect797" x="-411.02" y="358.17" width="13.592" height="3.5548" ry="1.7774" style="fill:#4d4d4d;paint-order:fill markers stroke"/>
+   <rect id="rect799" x="-381.74" y="358.17" width="13.592" height="3.5548" ry="1.7774" style="fill:#4d4d4d;paint-order:fill markers stroke"/>
+   <g id="g807" transform="matrix(2.2129,0,0,2.2129,-3349.9,-364.32)">
+    <ellipse id="ellipse801" cx="1329.8" cy="340.44" rx="2.6059" ry="1.0691" style="fill:#eb9f9b;paint-order:fill markers stroke"/>
+    <ellipse id="ellipse803" cx="1345.5" cy="340.44" rx="2.6059" ry="1.0691" style="fill:#eb9f9b;paint-order:fill markers stroke"/>
+    <path id="path805" d="m1340.6 339.76a3.0881 3.1542 0 0 1-2.8659 1.9863 3.0881 3.1542 0 0 1-2.866-1.9837 3.0881 3.1542 0 0 0-0.2221 1.168 3.0881 3.1542 0 0 0 3.0881 3.1542 3.0881 3.1542 0 0 0 3.0881-3.1542 3.0881 3.1542 0 0 0-0.2222-1.1705z" style="fill:#eb9f9b;paint-order:fill markers stroke"/>
+   </g>
+   <g id="g813" transform="matrix(2.2129,0,0,2.2129,-3349.9,-364.32)">
+    <path id="path809" d="m1333.6 344.51c-2.4741 0-4.4659 1.9918-4.4659 4.4659v8.986c0 2.4741 1.9918 4.4659 4.4659 4.4659h8.3323c2.4741 0 4.4659-1.9918 4.4659-4.4659v-8.986c0-2.4741-1.9918-4.4659-4.4659-4.4659h-1.1048c-0.1915 1.5542-1.4878 2.757-3.0613 2.757-1.5736 0-2.8693-1.2027-3.0608-2.757z" style="fill:#333;paint-order:fill markers stroke"/>
+    <path id="path811" d="m1331.3 348.21a6.4264 4.9542 0 0 0 6.4166 4.7442 6.4264 4.9542 0 0 0 6.4127-4.7442z" style="fill:#fff;paint-order:fill markers stroke"/>
+   </g>
+  </g>
+ </g>
+</svg>

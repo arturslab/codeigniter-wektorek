@@ -1,0 +1,9 @@
+<svg id="svg8" width="58.225" height="58.225" version="1.1" viewBox="0 0 15.406 15.405" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs id="defs14">
+  <symbol id="icon-x" viewBox="0 0 1024 1024">
+   <title id="title491">x</title>
+   <path id="path493" d="M 960,780.736 691.008,512 960,243.264 780.736,64 512,332.864 243.136,64 64,243.264 332.736,512 64,780.736 243.136,960 512,691.136 780.736,960 Z"/>
+  </symbol>
+ </defs>
+ <use id="close" transform="matrix(1.1279 0 0 1.1279 -1.1007 -1.1006)" width="100%" height="100%" style="fill:#333333" xlink:href="#icon-x"/>
+</svg>
