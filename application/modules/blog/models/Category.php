@@ -86,6 +86,7 @@ class Category extends MY_Model
      */
     public function get_all_categories_selector($parent_id = 0, $first_option = 'Wybierz...', $only_active = false) {
 
+        if(!$parent_id) {$parent_id=0;}
         $where = $only_active ? ' AND is_active = true ' : '';
         $sql = "SELECT "
                ."* "
