@@ -49,8 +49,6 @@ class Joke extends MY_Controller
 //        $this->load->helper('url');
         $this->load->library('pagination');
 
-
-
         $categories       = $this->category->get_all();
         $categories_names = [];
         foreach ($categories as $v) {
@@ -78,8 +76,6 @@ class Joke extends MY_Controller
         $this->pagination->initialize($config);
         $this->view_data['pagination'] = $this->pagination->create_links();
 
-
-
         $this->view_data['module_description'] = '';
         $this->view_data['posts']              = $posts;
         $this->view_data['categories_names']   = $categories_names;
@@ -100,17 +96,24 @@ class Joke extends MY_Controller
     public function page($category_slug = false, $page = 1)
     {
         $cat_id = $this->top_category;
-        if(isset($category_slug) && $category_slug != 'all') {
+        if(isset($category_slug) && $category_slug != 'all' && $category_slug != 'page') {
             $cat_id = $this->category->get_id_by_field($category_slug);
         }
 
         $this->view_data['categories_names'] = $this->category->get_all_categories_selector($cat_id, true);
 
-        print_r($this->view_data['categories_names']);
+//        print_r($this->view_data['categories_names']);
 
-        echo $category_slug;
+//        echo $category_slug;
 
-        die($page);
+//        die($page);
+
+
+        $posts = $this->post->posts_from_categories_active([$cat_id], true);
+        print_r($posts);
+
+//        $this->load->view($this->_container, $this->view_data);
+
     }
 
 

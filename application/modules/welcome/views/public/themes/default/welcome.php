@@ -106,7 +106,8 @@
 					<div class="card h-100 card-fx js-card-clickable" data-target="/avatar">
 						<span class="step_number text-title">Awatary</span>
 						<div class="card-img-top p-3">
-                            <?php include($assets_path . 'images/module_card_avatar_opt.svg'); ?>
+                            <?php // include($assets_path . 'images/module_card_avatar_opt.svg'); ?>
+							<img class="card-img-top p-3" src="/assets/images/module_card_avatar_animated.svg" alt="Choose avatar">
 						</div>
 						<!--					<img class="card-img-top p-3" src="/assets/images/module_card_avatar_opt.svg" alt="Choose avatar">-->
 						<div class="card-body d-flex flex-column">

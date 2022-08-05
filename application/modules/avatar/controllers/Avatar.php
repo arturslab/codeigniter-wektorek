@@ -209,7 +209,7 @@ class Avatar extends MY_Controller
         $this->view_data['module_css']       = $this->module . '.css';
         $this->view_data['module_js']        = 'avatar.js';
         $this->view_data['module_path']      = '/application/modules/' . $this->module;
-        $this->view_data['module_url']       = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->module . '/';
+        $this->view_data['module_url']       = 'https://' . $_SERVER['HTTP_HOST'] . '/' . $this->module . '/';
     }
 
 
@@ -239,7 +239,7 @@ class Avatar extends MY_Controller
         $this->view_data['module']      = $this->module;
         $this->view_data['page_slug']   = $this->module;
         $this->view_data['module_path'] = '/application/modules/' . $this->module;
-        $this->view_data['module_url']  = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $this->module . '/';
+//        $this->view_data['module_url']  = 'https://' . $_SERVER['HTTP_HOST'] . '/' . $this->module . '/';
 
         $this->load->view($this->_container, $this->view_data);
 

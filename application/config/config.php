@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['website_name'] = 'Gry.melma.pl';
+$config['website_name'] = 'Wektorek.pl';
 
 // Load environment variables
 require ('env.php');
@@ -46,7 +46,7 @@ $config['modules_locations'] =
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://wektorek.pl/';
+$config['base_url'] = 'https://wektorek.pl/';
 
 /*
 |--------------------------------------------------------------------------
